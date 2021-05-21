@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/open_sans/OpenSans.woff");
+}
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("fonts/open_sans/OpenSans-bold.woff");
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("fonts/open_sans/OpenSans-light.woff");
+}
+@font-face {
+  font-family: "Open Sans Semibold";
+  src: url("fonts/open_sans/OpenSans-semibold.woff");
+}
+header {
+  display: flex;
+  justify-content: center;
+  border-top: #572ee5 10px solid;
+  padding: 20px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+}
+header ul li {
+  padding: 0 10px;
+  color: #572ee5;
+}
+
+.logo {
+  width: 50%;
+}
+
+.menu {
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+}
+
+/*# sourceMappingURL=styles.css.map */
