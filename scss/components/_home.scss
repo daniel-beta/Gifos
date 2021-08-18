@@ -1,0 +1,37 @@
+@import "datos.scss";
+
+body#home {
+    main {
+        #search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            #search-bar {
+                max-width: 650px;
+                width: 100%;
+                text-align: center;
+                input {
+                    width: 80%;
+                    height: 50px;
+                    border: 1px solid $morado;
+                    border-radius: 30px;
+                    outline: none;
+                    font-size: 16px;
+                    padding-left: 30px;
+                    &::placeholder {
+                        color: $azul-claro;
+                    }
+                }
+                .icon-search {
+                    background-image: url(/assets/icon-search.svg);
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    bottom: 36px;
+                    left: 86%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

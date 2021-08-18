@@ -14,11 +14,22 @@
   font-family: "Open Sans Semibold";
   src: url("fonts/open_sans/OpenSans-semibold.woff");
 }
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url("fonts/montserrat/Montserrat-Bold.woff2") format("woff2");
+}
+/* Colores */
 header {
   display: flex;
   justify-content: center;
   border-top: #572ee5 10px solid;
   padding: 20px;
+}
+header .logo {
+  width: 50%;
+}
+header .menu {
+  text-transform: uppercase;
 }
 header ul {
   display: flex;
@@ -29,17 +40,65 @@ header ul li {
   color: #572ee5;
 }
 
-.logo {
-  width: 50%;
+/* IPAD */
+@media screen and (max-width: 768px) {
+  header .logo {
+    width: 25%;
+  }
+}
+/* Colores */
+body#home main #search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body#home main #search #search-bar {
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+}
+body#home main #search #search-bar input {
+  width: 80%;
+  height: 50px;
+  border: 1px solid #572ee5;
+  border-radius: 30px;
+  outline: none;
+  font-size: 16px;
+  padding-left: 30px;
+}
+body#home main #search #search-bar input::placeholder {
+  color: #9cafc3;
+}
+body#home main #search #search-bar .icon-search {
+  background-image: url(/assets/icon-search.svg);
+  position: relative;
+  width: 20px;
+  height: 20px;
+  bottom: 36px;
+  left: 86%;
+  cursor: pointer;
 }
 
-.menu {
-  text-transform: uppercase;
-}
-
+/* Colores */
 body {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: Montserrat;
+}
+body main {
+  display: flex;
+  justify-content: center;
+}
+body main h1.titulo {
+  color: #572ee5;
+  font-size: 35px;
+  font-family: Montserrat, "Open Sans";
+  text-align: center;
+  line-height: 50px;
+  width: 600px;
+  justify-content: center;
+}
+body main h1.titulo span {
+  color: #50e3c2;
 }
 
 /*# sourceMappingURL=styles.css.map */

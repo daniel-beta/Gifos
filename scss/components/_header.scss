@@ -5,11 +5,15 @@ header {
     justify-content: center;
     border-top: $morado 10px solid;
     padding: 20px;
-
+    .logo {
+        width: 50%;
+    }
+    .menu {
+        text-transform: uppercase;
+    }
     ul {
         display: flex;
         list-style: none;
-
         li {
             padding: 0 10px;
             color: $morado;
@@ -17,10 +21,11 @@ header {
     }
 }
 
-.logo {
-    width: 50%;
-}
-
-.menu {
-    text-transform: uppercase;
+/* IPAD */
+@media screen and (max-width: 768px) {
+    header {
+        .logo {
+            width: 25%;
+        }
+    }
 }
