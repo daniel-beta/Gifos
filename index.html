@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>GIFOS</title>
 </head>
-<body>
+<body id="home">
     <header>
         <div class="logo">
-            <img src="assets/logo-desktop.svg" alt="logo-gifos">
+            <img src="/assets/logo-desktop.svg" alt="logo-gifos">
         </div>
         <nav class="menu">
             <ul>
@@ -20,14 +20,39 @@
             </ul>
         </nav>
         <div class="crear">
-            <img src="assets/button-crear.svg" alt="icono-crear">
+            <img src="/assets/button-crear.svg" alt="icono-crear">
         </div>
     </header>
     <main>
-        <h1 class="">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
+        <div id="search">
+            <h1 class="titulo">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
+            <img src="/assets/ilustra_header.svg" alt="ilustra_header">
+            <div id="search-bar">
+                <input type="text" name="searchGifos" id="searchGifos" placeholder="Busca GIFOS y más">
+                <div class="icon-search"></div>
+            </div>
+        </div>
+        <div id="trending">
+            <h3>Trending:</h3>
+            <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+        </div>
+        <div id="trendingGifos">
+            <h2 class="subtitulo">Trending GIFOS</h2>
+            <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+        </div>
     </main>
     <footer>
-
+        <div id="social">
+            <p>Compartir en:</p>
+            <div id="redes-sociales">
+                <a href="/" id="facebook" target="_blank"></a>
+                <a href="/" id="twitter" target="_blank"></a>
+                <a href="/" id="instagram" target="_blank"></a>
+            </div>
+        </div>
+        <div id="copyright">
+            <p>© GIFOS 2020 All Rights Reserved.</p>
+        </div>
     </footer>
     <script src="js/scripts.js"></script>
 </body>

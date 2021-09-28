@@ -1,8 +1,33 @@
 @import "components/fonts.scss";
 @import "components/header.scss";
-
+@import "components/footer.scss";
+@import "components/home.scss";
+@import "components/datos.scss";
 
 body {
     margin: 0;
-    font-family: "Open Sans";
+    font-family: Montserrat;
+    main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        h1.titulo {
+            color: $morado;
+            font-size: 35px;
+            font-family: Montserrat, "Open Sans";
+            text-align: center;
+            line-height: 50px;
+            width: 600px;
+            justify-content: center;
+            span {
+                color: $celeste;
+            }
+        }
+        h2.subtitulo {
+            font-size: 25px;
+            color: $morado;
+            font-weight: bold;
+        }
+    }
 }
