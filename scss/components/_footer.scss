@@ -1,0 +1,57 @@
+@import "datos.scss";
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: $morado 6px solid;
+    padding-bottom: 25px;
+    #social {
+        display: flex;
+        #redes-sociales {
+            display: flex;
+            align-items: center;
+            a {
+                width: 18px;
+                height: 18px;
+                margin-left: 15px;
+                &#facebook {
+                    background-image: url(/assets/icon_facebook.svg);
+                    background-repeat: no-repeat;
+                    &:hover {
+                        background-image: url(/assets/icon_facebook_hover.svg);
+                    }
+                }
+                &#instagram {
+                    background-image: url(/assets/icon_instagram.svg);
+                    background-repeat: no-repeat;
+                    &:hover {
+                        background-image: url(/assets/icon_instagram-hover.svg);
+                    }
+                }
+                &#twitter {
+                    background-image: url(/assets/icon-twitter.svg);
+                    background-repeat: no-repeat;
+                    &:hover {
+                        background-image: url(/assets/icon-twitter-hover.svg);
+                    }
+                }
+            }
+        }
+        p {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: normal;
+        }
+    }
+    #copyright {
+        p {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: normal;
+        }
+    }
+}

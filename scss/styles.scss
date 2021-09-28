@@ -1,5 +1,6 @@
 @import "components/fonts.scss";
 @import "components/header.scss";
+@import "components/footer.scss";
 @import "components/home.scss";
 @import "components/datos.scss";
 
@@ -9,6 +10,8 @@ body {
     main {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
         h1.titulo {
             color: $morado;
             font-size: 35px;
@@ -20,6 +23,11 @@ body {
             span {
                 color: $celeste;
             }
+        }
+        h2.subtitulo {
+            font-size: 25px;
+            color: $morado;
+            font-weight: bold;
         }
     }
 }
