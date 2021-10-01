@@ -155,19 +155,16 @@ body#home main #trending p {
   font-weight: normal;
   color: #572ee5;
 }
-body#home main #trendingGifos {
-  width: 100%;
-  background: #f5f6f9;
+
+/* Colores */
+body#favoritos main #icono-titulo,
+body#favoritos main #contenedor-vacio {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
-  margin: 30px 0;
 }
-body#home main #trendingGifos p {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
+body#favoritos main #contenedor-vacio {
+  margin: 80px 0;
 }
 
 /* Colores */
@@ -197,6 +194,25 @@ body main h2.subtitulo {
   font-size: 25px;
   color: #572ee5;
   font-weight: bold;
+}
+body main h3.subtitulo-secundario {
+  font-size: 22px;
+  color: #50e3c2;
+  text-align: center;
+}
+body main #trendingGifos {
+  width: 100%;
+  background: #f5f6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  margin: 30px 0;
+}
+body main #trendingGifos p {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=styles.css.map */
