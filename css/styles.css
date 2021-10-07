@@ -39,6 +39,12 @@ header ul li {
   padding: 0 10px;
   color: #572ee5;
 }
+header ul li a {
+  text-decoration: none;
+}
+header ul li a:visited {
+  color: #572ee5;
+}
 
 /* IPAD */
 @media screen and (max-width: 768px) {
@@ -155,19 +161,24 @@ body#home main #trending p {
   font-weight: normal;
   color: #572ee5;
 }
-body#home main #trendingGifos {
-  width: 100%;
-  background: #f5f6f9;
+
+/* Colores */
+body#favoritos header .menu #favoritos {
+  color: #9cafc3;
+}
+body#favoritos main #icono-titulo,
+body#favoritos main #contenedor-vacio {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
-  margin: 30px 0;
 }
-body#home main #trendingGifos p {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
+body#favoritos main #contenedor-vacio {
+  margin: 80px 0;
+}
+
+/* Colores */
+body#mis-gifos header .menu #mis-gifos {
+  color: #9cafc3;
 }
 
 /* Colores */
@@ -197,6 +208,25 @@ body main h2.subtitulo {
   font-size: 25px;
   color: #572ee5;
   font-weight: bold;
+}
+body main h3.subtitulo-secundario {
+  font-size: 22px;
+  color: #50e3c2;
+  text-align: center;
+}
+body main #trendingGifos {
+  width: 100%;
+  background: #f5f6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  margin: 30px 0;
+}
+body main #trendingGifos p {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,22 @@
+@import "datos.scss";
+
+body#favoritos {
+    header {
+        .menu {
+            #favoritos {
+                color: $azul-claro;
+            }
+        }
+    }
+    main {
+        #icono-titulo,
+        #contenedor-vacio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #contenedor-vacio {
+            margin: 80px 0;
+        }
+    }
+}
