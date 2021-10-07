@@ -39,6 +39,12 @@ header ul li {
   padding: 0 10px;
   color: #572ee5;
 }
+header ul li a {
+  text-decoration: none;
+}
+header ul li a:visited {
+  color: #572ee5;
+}
 
 /* IPAD */
 @media screen and (max-width: 768px) {
@@ -157,6 +163,9 @@ body#home main #trending p {
 }
 
 /* Colores */
+body#favoritos header .menu #favoritos {
+  color: #9cafc3;
+}
 body#favoritos main #icono-titulo,
 body#favoritos main #contenedor-vacio {
   display: flex;
@@ -165,6 +174,11 @@ body#favoritos main #contenedor-vacio {
 }
 body#favoritos main #contenedor-vacio {
   margin: 80px 0;
+}
+
+/* Colores */
+body#mis-gifos header .menu #mis-gifos {
+  color: #9cafc3;
 }
 
 /* Colores */

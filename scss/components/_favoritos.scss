@@ -1,6 +1,13 @@
 @import "datos.scss";
 
 body#favoritos {
+    header {
+        .menu {
+            #favoritos {
+                color: $azul-claro;
+            }
+        }
+    }
     main {
         #icono-titulo,
         #contenedor-vacio {

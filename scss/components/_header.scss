@@ -17,6 +17,12 @@ header {
         li {
             padding: 0 10px;
             color: $morado;
+            a {
+                text-decoration: none;
+                &:visited {
+                    color: $morado;
+                }
+            }
         }
     }
 }
