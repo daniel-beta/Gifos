@@ -26,24 +26,33 @@ header {
   padding: 20px;
 }
 header .logo {
-  width: 50%;
+  width: 40%;
 }
 header .menu {
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
 }
-header ul {
+header .menu ul {
   display: flex;
   list-style: none;
+  padding: 0;
 }
-header ul li {
-  padding: 0 10px;
+header .menu ul li {
+  padding: 0 20px;
   color: #572ee5;
 }
-header ul li a {
+header .menu ul li a {
   text-decoration: none;
 }
-header ul li a:visited {
+header .menu ul li a:visited {
   color: #572ee5;
+}
+header .crear {
+  display: flex;
+  align-items: center;
 }
 
 /* IPAD */
