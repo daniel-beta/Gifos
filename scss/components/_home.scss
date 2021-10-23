@@ -48,11 +48,13 @@ body#home {
                 justify-content: center;
                 padding-top: 30px;
             }
-            p {
-                text-align: center;
-                font-size: 16px;
-                font-weight: normal;
-                color: $morado;
+            #trendingSearches {
+                span {
+                    font-size: 16px;
+                    font-weight: normal;
+                    color: $morado;
+                    text-transform: capitalize;
+                }
             }
         }
     }
