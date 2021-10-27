@@ -16,25 +16,28 @@ const getApi = async (url) => {
     }
 }
 
-/* TRENDING */
+/* TRENDING SEARCHES */
 
 const getTrendingSearches = () => {
     const url = `${giphyUrl}trending/searches?api_key=${apiKey}`;
     const result = getApi(url);
     const trendingSearches = document.querySelector("#trendingSearches");
     result.then((resp)=>{
-        // console.log(resp.data)
         for (let i = 0; i < 5; i++) {
             const span = document.createElement("span");
             span.textContent = `${resp.data[i]}, `
             trendingSearches.appendChild(span);
-
         }
         trendingSearches.lastChild.textContent = trendingSearches.lastChild.textContent.slice(0, -2)
-        console.log(trendingSearches.lastChild.textContent)
     }).catch((e) =>{
         console.log("Error: " + e);
     });
 }
+
+/* SEARCH */
+
+const searchValue = document.querySelector("search_value");
+
+
 
 getTrendingSearches();
