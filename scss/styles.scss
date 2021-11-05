@@ -7,48 +7,142 @@
 @import "components/datos.scss";
 
 body {
-    margin: 0;
-    font-family: Montserrat;
-    main {
+  margin: 0;
+  font-family: Montserrat;
+  main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h1.titulo {
+      color: $morado;
+      font-size: 35px;
+      font-family: Montserrat, "Open Sans";
+      text-align: center;
+      line-height: 50px;
+      width: 600px;
+      justify-content: center;
+      span {
+        color: $celeste;
+      }
+    }
+    h2.subtitulo {
+      font-size: 25px;
+      color: $morado;
+      font-weight: bold;
+    }
+    h3.subtitulo-secundario {
+      font-size: 22px;
+      color: $celeste;
+      text-align: center;
+    }
+    #trendingGifos {
+      width: 100%;
+      background: $black-haze;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0;
+      margin: 30px 0;
+      p {
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: normal;
+      }
+      #sliderTrending {
+        position: relative;
+        width: 90%;
         display: flex;
         justify-content: center;
-        flex-direction: column;
         align-items: center;
-        h1.titulo {
-            color: $morado;
-            font-size: 35px;
-            font-family: Montserrat, "Open Sans";
-            text-align: center;
-            line-height: 50px;
-            width: 600px;
-            justify-content: center;
-            span {
-                color: $celeste;
+        margin-top: 35px;
+        margin-bottom: 100px;
+        .gifoTrending {
+          height: 275px;
+          width: 375px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          img {
+            height: 275px;
+          }
+          .gifoInfo {
+            display: none;
+            position: absolute;
+            height: 100%;
+            width: 375px;
+            .actions {
+              display: flex;
+              justify-content: flex-end;
+              .icon {
+                width: 32px;
+                height: 32px;
+                margin: 20px 20px 0 0;
+                cursor: pointer;
+                &.like {
+                  content: url("/assets/icon-fav.svg");
+                  &:hover {
+                    content: url("/assets/icon-fav-hover.svg");
+                  }
+                }
+                &.download {
+                  content: url("/assets/icon-download.svg");
+                  &:hover {
+                    content: url("/assets/icon-download-hover.svg");
+                  }
+                }
+                &.expand {
+                  content: url("/assets/icon-max-normal.svg");
+                  &:hover {
+                    content: url("/assets/icon-max-hover.svg");
+                  }
+                }
+              }
             }
-        }
-        h2.subtitulo {
-            font-size: 25px;
-            color: $morado;
-            font-weight: bold;
-        }
-        h3.subtitulo-secundario {
-            font-size: 22px;
-            color: $celeste;
-            text-align: center;
-        }
-        #trendingGifos {
-            width: 100%;
-            background: $black-haze;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 0;
-            margin: 30px 0;
-            p {
-                font-family: Roboto;
-                font-size: 18px;
-                font-weight: normal;
+            .titles {
+              position: absolute;
+              bottom: 50px;
+              left: 20px;
+              p {
+                color: white;
+                &.user {
+                  font-size: 15px;
+                  margin-bottom: 6px;
+                }
+                &.title {
+                  margin-top: 0;
+                  font-size: 18px;
+                  font-weight: bold;
+                }
+              }
             }
+          }
+          &:hover .gifoInfo {
+            display: block;
+            background-color: rgba(87, 46, 229, 0.5);
+          }
         }
+        .arrowsSlider {
+          position: absolute;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          &#arrowRight {
+            right: 0;
+            content: url("/assets/Button-Slider-right.svg");
+            &:hover {
+              content: url("/assets/Button-Slider-right-hover.svg");
+            }
+          }
+          &#arrowLeft {
+            left: 0;
+            content: url("/assets/Button-Slider-left.svg");
+            &:hover {
+              content: url("/assets/Button-Slider-left-hover.svg");
+            }
+          }
+        }
+      }
     }
+  }
 }

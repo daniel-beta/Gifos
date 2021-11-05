@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/assets/logo-mobile.svg" type="image/png" />
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>GIFOS</title>
-</head>
-<body id="home">
+  </head>
+  <body id="home">
     <header>
-        <div class="logo">
-            <a href="/"><img src="/assets/logo-desktop.svg" alt="logo-gifos"></a>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li>Modo Nocturno</li>
-                <li><a href="/favoritos.html" id="favoritos">Favoritos</a></li>
-                <li><a href="/mis-gifos.html" id="mis-gifos">Mis Gifos</a></li>
-            </ul>
-        </nav>
-        <div class="crear">
-            <a href="/crear-gifos.html" id="crear-gifos"><img src="/assets/button-crear.svg" alt="icono-crear"></a>
-        </div>
+      <div class="logo">
+        <a href="/"><img src="/assets/logo-desktop.svg" alt="logo-gifos" /></a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li>Modo Nocturno</li>
+          <li><a href="/favoritos.html" id="favoritos">Favoritos</a></li>
+          <li><a href="/mis-gifos.html" id="mis-gifos">Mis Gifos</a></li>
+        </ul>
+      </nav>
+      <div class="crear">
+        <a href="/crear-gifos.html" id="crear-gifos"
+          ><img src="/assets/button-crear.svg" alt="icono-crear"
+        /></a>
+      </div>
     </header>
     <main>
-        <div id="search">
-            <h1 class="titulo">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
-            <img src="/assets/ilustra_header.svg" alt="ilustra_header">
-            <div id="search-bar">
-                <input type="text" name="searchGifos" id="searchGifos" placeholder="Busca GIFOS y más">
-                <div class="icon-search"></div>
+      <div id="search">
+        <h1 class="titulo">
+          Inspírate, busca, guarda y crea los mejores <span>GIFOS</span>
+        </h1>
+        <img src="/assets/ilustra_header.svg" alt="ilustra_header" />
+        <div id="search-bar">
+          <input
+            type="text"
+            name="searchGifos"
+            id="searchGifos"
+            placeholder="Busca GIFOS y más"
+          />
+          <div class="icon-search"></div>
+        </div>
+      </div>
+      <div id="trending">
+        <h3>Trending:</h3>
+        <div id="trendingSearches"></div>
+      </div>
+      <div id="trendingGifos">
+        <h2 class="subtitulo">Trending GIFOS</h2>
+        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+        <div id="sliderTrending">
+          <div class="gifoTrending">
+            <img
+              src="https://media4.giphy.com/media/BZkzGyUV7s5Gf83pqU/giphy.gif?cid=009a9293nwv7ic98i9bfx6fv4p8h81x9w68u6wdgsl4qky4t&rid=giphy.gif&ct=g"
+              alt="gifoTrending"
+            />
+            <div class="gifoInfo">
+              <div class="actions">
+                <div class="like icon"></div>
+                <div class="download icon"></div>
+                <div class="expand icon"></div>
+              </div>
+              <div class="titles">
+                <p class="user">Hola</p>
+                <p class="title">Hola, que tal?</p>
+              </div>
             </div>
+          </div>
+          <div id="arrowRight" class="arrowsSlider"></div>
+          <div id="arrowLeft" class="arrowsSlider"></div>
         </div>
-        <div id="trending">
-            <h3>Trending:</h3>
-            <div id="trendingSearches"></div>
-        </div>
-        <div id="trendingGifos">
-            <h2 class="subtitulo">Trending GIFOS</h2>
-            <p>Mira los últimos GIFOS de nuestra comunidad.</p>
-        </div>
+      </div>
     </main>
     <footer>
-        <div id="social">
-            <p>Compartir en:</p>
-            <div id="redes-sociales">
-                <a href="/" id="facebook" target="_blank"></a>
-                <a href="/" id="twitter" target="_blank"></a>
-                <a href="/" id="instagram" target="_blank"></a>
-            </div>
+      <div id="social">
+        <p>Compartir en:</p>
+        <div id="redes-sociales">
+          <a href="/" id="facebook" target="_blank"></a>
+          <a href="/" id="twitter" target="_blank"></a>
+          <a href="/" id="instagram" target="_blank"></a>
         </div>
-        <div id="copyright">
-            <p>© GIFOS 2020 All Rights Reserved.</p>
-        </div>
+      </div>
+      <div id="copyright">
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+      </div>
     </footer>
     <script src="js/scripts.js"></script>
-</body>
+  </body>
 </html>
