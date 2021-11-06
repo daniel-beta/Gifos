@@ -36,11 +36,52 @@ const getTrendingSearches = () => {
 
 /* SEARCH */
 
-const searchValue = document.querySelector("#searchGifos");
-searchValue.addEventListener("keyup", () => {
-  console.log(searchValue.value)
-})
+const searchValue = document.querySelector("#searchGifos")
+
+const search = () => {
+  const iconSearch = document.querySelector(".icon-search")
+  const iconSearchGray = document.querySelector(".icon-search-gray")
+  const iconClose = document.querySelector(".icon-close")
+  searchValue.addEventListener("keyup", () => {
+    if (searchValue.value !== '') {
+      filtrar()
+      iconSearch.classList.add("dn")
+      iconClose.classList.remove("dn")
+      iconSearchGray.classList.remove("dn")
+    } else {
+      iconSearch.classList.remove("dn")
+      iconClose.classList.add("dn")
+      iconSearchGray.classList.add("dn")
+    }
+  })
+}
+
+const showSuggestions = suggestion => {
+  const urlSearch = `${giphyUrl}gifs/search/tags?api_key=${apiKey}&q=${suggestion}=&limit=5`;
+  const suggestions = getApi(urlSearch)
+  suggestions.then((resp) => {
+    resp.data.map(elementSuggestion => {
+      suggestionsDom(elementSuggestion.name);
+    });
+  }).catch((e) => {
+    console.log("Ha ocurrido un error " + e);
+  });
 
 
+}
 
-getTrendingSearches();
+const suggestionsDom = suggestionDom => {
+  console.log(suggestionDom)
+  const searchBar = document.querySelector("#search-bar")
+  searchBar.innerHTML += `<div class="suggestions">${suggestionDom}</div>`
+}
+
+const filtrar = () =>{
+  const texto = searchValue.value;
+  showSuggestions(texto);
+  console.log("desde filtar", searchValue.value)
+}
+
+/* showSuggestions("hola") */
+getTrendingSearches()
+search()

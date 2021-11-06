@@ -127,27 +127,41 @@ body#home main #search #search-bar {
   max-width: 650px;
   width: 100%;
   text-align: center;
+  position: relative;
+  margin-bottom: 25px;
+  border: 1px solid #572ee5;
+  border-radius: 30px;
 }
 body#home main #search #search-bar input {
   width: 80%;
   height: 50px;
-  border: 1px solid #572ee5;
-  border-radius: 30px;
   outline: none;
   font-size: 16px;
-  padding-left: 30px;
+  padding-left: 15px;
+  border: none;
 }
 body#home main #search #search-bar input::placeholder {
   color: #9cafc3;
 }
-body#home main #search #search-bar .icon-search {
-  background-image: url(/assets/icon-search.svg);
-  position: relative;
+body#home main #search #search-bar div[class^=icon] {
+  position: absolute;
   width: 20px;
   height: 20px;
-  bottom: 36px;
-  left: 86%;
+  top: 1rem;
+  right: 4%;
   cursor: pointer;
+}
+body#home main #search #search-bar .icon-search {
+  background-image: url(/assets/icon-search.svg);
+}
+body#home main #search #search-bar .icon-close {
+  background-image: url(/assets/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body#home main #search #search-bar .icon-search-gray {
+  background-image: url(/assets/icon-search-gray.svg);
+  left: 4%;
 }
 body#home main #trending {
   display: flex;
@@ -340,6 +354,12 @@ body main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft {
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft:hover {
   content: url("/assets/Button-Slider-left-hover.svg");
+}
+body .dn {
+  display: none;
+}
+body .db {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

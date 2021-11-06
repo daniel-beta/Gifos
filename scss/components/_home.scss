@@ -1,61 +1,75 @@
 @import "datos.scss";
 
 body#home {
-    main {
-        #search {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            #search-bar {
-                max-width: 650px;
-                width: 100%;
-                text-align: center;
-                input {
-                    width: 80%;
-                    height: 50px;
-                    border: 1px solid $morado;
-                    border-radius: 30px;
-                    outline: none;
-                    font-size: 16px;
-                    padding-left: 30px;
-                    &::placeholder {
-                        color: $azul-claro;
-                    }
-                }
-                .icon-search {
-                    background-image: url(/assets/icon-search.svg);
-                    position: relative;
-                    width: 20px;
-                    height: 20px;
-                    bottom: 36px;
-                    left: 86%;
-                    cursor: pointer;
-                }
-            }
+  main {
+    #search {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      #search-bar {
+        max-width: 650px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        margin-bottom: 25px;
+        border: 1px solid $morado;
+        border-radius: 30px;
+        input {
+          width: 80%;
+          height: 50px;
+          outline: none;
+          font-size: 16px;
+          padding-left: 15px;
+          border: none;
+          &::placeholder {
+            color: $azul-claro;
+          }
         }
-        #trending {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            h3 {
-                text-align: center;
-                font-size: 18px;
-                font-weight: bold;
-                color: $morado;
-                border-top: 1px $azul-claro solid;
-                width: 200px;
-                display: flex;
-                justify-content: center;
-                padding-top: 30px;
-            }
-            #trendingSearches {
-                span {
-                    font-size: 16px;
-                    font-weight: normal;
-                    color: $morado;
-                    text-transform: capitalize;
-                }
-            }
+        div[class^="icon"] {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: 1rem;
+          right: 4%;
+          cursor: pointer;
         }
+        .icon-search {
+          background-image: url(/assets/icon-search.svg);
+        }
+        .icon-close {
+          background-image: url(/assets/close.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .icon-search-gray {
+          background-image: url(/assets/icon-search-gray.svg);
+          left: 4%;
+        }
+      }
     }
+    #trending {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h3 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: $morado;
+        border-top: 1px $azul-claro solid;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+      }
+      #trendingSearches {
+        span {
+          font-size: 16px;
+          font-weight: normal;
+          color: $morado;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
 }
