@@ -37,6 +37,7 @@ const getTrendingSearches = () => {
 /* SEARCH */
 
 const searchValue = document.querySelector("#searchGifos")
+const suggestionsDiv = document.querySelector('#suggestions')
 
 const search = () => {
   const iconSearch = document.querySelector(".icon-search")
@@ -52,6 +53,8 @@ const search = () => {
       iconSearch.classList.remove("dn")
       iconClose.classList.add("dn")
       iconSearchGray.classList.add("dn")
+      searchValue.value = '';
+      suggestionsDiv.innerHTML = '';
     }
   })
 }
@@ -61,6 +64,7 @@ const showSuggestions = suggestion => {
   const suggestions = getApi(urlSearch)
   suggestions.then((resp) => {
     resp.data.map(elementSuggestion => {
+      console.log(elementSuggestion.name)
       suggestionsDom(elementSuggestion.name);
     });
   }).catch((e) => {
@@ -71,15 +75,17 @@ const showSuggestions = suggestion => {
 }
 
 const suggestionsDom = suggestionDom => {
-  console.log(suggestionDom)
-  const searchBar = document.querySelector("#search-bar")
-  searchBar.innerHTML += `<div class="suggestions">${suggestionDom}</div>`
+  console.log(suggestionDom, "holiiis")
+  suggestionsDiv.innerHTML += `<div class="suggestions">${suggestionDom}</div>`
+
+
 }
 
 const filtrar = () =>{
   const texto = searchValue.value;
   showSuggestions(texto);
   console.log("desde filtar", searchValue.value)
+  console.log('------------------')
 }
 
 /* showSuggestions("hola") */
