@@ -19,7 +19,6 @@ body#home {
           height: 50px;
           outline: none;
           font-size: 16px;
-          padding-left: 15px;
           border: none;
           &::placeholder {
             color: $azul-claro;
@@ -45,12 +44,37 @@ body#home {
           background-image: url(/assets/icon-search-gray.svg);
           left: 4%;
         }
+        #suggestions {
+          .suggestion {
+            display: flex;
+            &:first-child {
+              border-top: 1px solid $azul-claro;
+              padding-top: 10px;
+            }
+            margin: 0 20px;
+            text-align: start;
+            padding: 5px 0;
+            &:last-child {
+              padding-bottom: 10px;
+            }
+            .icon-search-gray {
+              position: initial;
+              width: 16px;
+              height: 16px;
+              margin-right: 18px;
+              margin-left: 8px;
+            }
+          }
+        }
       }
     }
     #trending {
       display: flex;
       flex-direction: column;
       align-items: center;
+      &.dn {
+        display: none;
+      }
       h3 {
         text-align: center;
         font-size: 18px;
@@ -63,12 +87,26 @@ body#home {
         padding-top: 30px;
       }
       #trendingSearches {
+        margin-bottom: 25px;
         span {
           font-size: 16px;
           font-weight: normal;
           color: $morado;
           text-transform: capitalize;
         }
+      }
+    }
+    #searchResult {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      #titleResult {
+        font-size: 35px;
+        color: $morado;
+        text-align: center;
+        width: 338px;
+        border-top: 1px $azul-claro solid;
+        padding-top: 30px;
       }
     }
   }
