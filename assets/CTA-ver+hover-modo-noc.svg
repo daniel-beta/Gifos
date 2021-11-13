@@ -1,16 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="127px" height="50px" viewBox="0 0 127 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
-    <title>CTA-ver+hover-modo-noc</title>
-    <desc>Created with Sketch.</desc>
-    <g id="GIFOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="16-UI-Kit-Modo-Nocturno" transform="translate(-323.000000, -3028.000000)">
-            <g id="CTA-ver+hover-modo-noc" transform="translate(323.000000, 3028.000000)">
-                <rect id="Rectangle-3" fill="#FFFFFF" x="0" y="0" width="127" height="50" rx="25"></rect>
-                <text id="ver-todos" font-family="Montserrat-Bold, Montserrat" font-size="13" font-weight="bold" fill="#000000">
-                    <tspan x="32.339" y="31">VER MÁS</tspan>
-                </text>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 127 50" style="enable-background:new 0 0 127 50;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st1{enable-background:new    ;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="GIFOS">
+	<g id="_x31_6-UI-Kit-Modo-Nocturno" transform="translate(-323.000000, -3028.000000)">
+		<g id="CTA-ver_x2B_hover-modo-noc" transform="translate(323.000000, 3028.000000)">
+			<path id="Rectangle-3" class="st0" d="M25,0h77c13.8,0,25,11.2,25,25l0,0c0,13.8-11.2,25-25,25H25C11.2,50,0,38.8,0,25l0,0
+				C0,11.2,11.2,0,25,0z"/>
+			<g class="st1">
+				<path d="M42.2,21.9L38.2,31h-2.1l-3.9-9.1h2.3l2.8,6.5l2.8-6.5H42.2z"/>
+				<path d="M50,29.3V31h-7v-9.1h6.9v1.7H45v2h4.2v1.6H45v2.1H50z"/>
+				<path d="M57.4,31l-1.8-2.5h-0.1h-1.8V31h-2.1v-9.1h3.9c0.8,0,1.5,0.1,2.1,0.4c0.6,0.3,1.1,0.7,1.4,1.1c0.3,0.5,0.5,1.1,0.5,1.8
+					S59.4,26.5,59,27c-0.3,0.5-0.8,0.9-1.4,1.1l2,2.9H57.4z M56.9,24c-0.3-0.3-0.8-0.4-1.4-0.4h-1.7v3.2h1.7c0.6,0,1.1-0.1,1.4-0.4
+					c0.3-0.3,0.5-0.7,0.5-1.2C57.4,24.7,57.2,24.3,56.9,24z"/>
+				<path d="M73.2,31l0-5.5L70.5,30h-0.9l-2.7-4.4V31h-2v-9.1h1.7l3.4,5.7l3.4-5.7h1.7l0,9.1H73.2z"/>
+				<path d="M83.3,29h-4.2l-0.8,2h-2.2l4.1-9.1h2.1l4.1,9.1h-2.2L83.3,29z M82.6,27.5L81.2,24l-1.4,3.5H82.6z M81.8,19.3h2.2
+					l-2.4,1.9H80L81.8,19.3z"/>
+				<path d="M88.2,30.9c-0.7-0.2-1.2-0.4-1.6-0.8l0.7-1.6c0.4,0.3,0.9,0.5,1.4,0.7c0.5,0.2,1.1,0.3,1.6,0.3c0.6,0,1-0.1,1.3-0.3
+					s0.4-0.4,0.4-0.7c0-0.2-0.1-0.4-0.3-0.5c-0.2-0.1-0.4-0.3-0.7-0.3c-0.3-0.1-0.6-0.2-1.1-0.3c-0.7-0.2-1.3-0.3-1.7-0.5
+					s-0.8-0.4-1.1-0.8s-0.5-0.8-0.5-1.5c0-0.5,0.1-1,0.4-1.4s0.7-0.8,1.3-1s1.3-0.4,2.1-0.4c0.6,0,1.1,0.1,1.7,0.2s1,0.3,1.5,0.6
+					l-0.6,1.6c-0.8-0.5-1.7-0.7-2.5-0.7c-0.6,0-1,0.1-1.3,0.3c-0.3,0.2-0.4,0.4-0.4,0.8c0,0.3,0.2,0.5,0.5,0.7
+					c0.3,0.2,0.8,0.3,1.5,0.4c0.7,0.2,1.3,0.3,1.7,0.5c0.4,0.2,0.8,0.4,1.1,0.8c0.3,0.4,0.5,0.8,0.5,1.4c0,0.5-0.1,1-0.4,1.4
+					c-0.3,0.4-0.7,0.8-1.3,1c-0.6,0.3-1.3,0.4-2.1,0.4C89.5,31.2,88.8,31.1,88.2,30.9z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

@@ -57,71 +57,6 @@ body {
         align-items: center;
         margin-top: 35px;
         margin-bottom: 100px;
-        .gifoTrending {
-          height: 275px;
-          width: 375px;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
-          img {
-            height: 275px;
-          }
-          .gifoInfo {
-            display: none;
-            position: absolute;
-            height: 100%;
-            width: 375px;
-            .actions {
-              display: flex;
-              justify-content: flex-end;
-              .icon {
-                width: 32px;
-                height: 32px;
-                margin: 20px 20px 0 0;
-                cursor: pointer;
-                &.like {
-                  content: url("/assets/icon-fav.svg");
-                  &:hover {
-                    content: url("/assets/icon-fav-hover.svg");
-                  }
-                }
-                &.download {
-                  content: url("/assets/icon-download.svg");
-                  &:hover {
-                    content: url("/assets/icon-download-hover.svg");
-                  }
-                }
-                &.expand {
-                  content: url("/assets/icon-max-normal.svg");
-                  &:hover {
-                    content: url("/assets/icon-max-hover.svg");
-                  }
-                }
-              }
-            }
-            .titles {
-              position: absolute;
-              bottom: 50px;
-              left: 20px;
-              p {
-                color: white;
-                &.user {
-                  font-size: 15px;
-                  margin-bottom: 6px;
-                }
-                &.title {
-                  margin-top: 0;
-                  font-size: 18px;
-                  font-weight: bold;
-                }
-              }
-            }
-          }
-          &:hover .gifoInfo {
-            display: block;
-            background-color: rgba(87, 46, 229, 0.5);
-          }
-        }
         .arrowsSlider {
           position: absolute;
           display: flex;
@@ -143,6 +78,137 @@ body {
           }
         }
       }
+    }
+  }
+  #searchResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #gifosResult {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1440px;
+      .gifoTrending {
+        max-height: 200px;
+        max-width: 260px;
+        margin: 15px;
+        img {
+          height: 200px;
+          width: 260px;
+          object-fit: cover;
+        }
+        .gifoInfo {
+          height: 200px;
+          width: 260px;
+          &:hover .gifoInfo {
+            display: block;
+            background-color: rgba(87, 46, 229, 0.5);
+          }
+          .titles {
+            bottom: 10px;
+          }
+          .actions .icon {
+            margin: 15px 10px 0 0;
+          }
+        }
+      }
+    }
+    #notFound {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 22px;
+      color: $celeste;
+      font-weight: bold;
+      margin: 25px 0;
+      img {
+        width: 150px;
+        height: 150px;
+      }
+      &.dn {
+        display: none;
+      }
+    }
+    .showMore {
+      position: relative;
+      background-image: url("/assets/CTA-ver-mas.svg");
+      margin: auto;
+      margin-bottom: 30px;
+      top: 30px;
+      width: 128px;
+      height: 50px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .showMore:hover {
+      background-image: url("/assets/CTA-ver-mas-hover.svg");
+    }
+  }
+  .gifoTrending {
+    height: 275px;
+    width: 375px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 275px;
+    }
+    .gifoInfo {
+      display: none;
+      position: absolute;
+      height: 100%;
+      width: 375px;
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+        .icon {
+          width: 32px;
+          height: 32px;
+          margin: 20px 20px 0 0;
+          cursor: pointer;
+          &.like {
+            content: url("/assets/icon-fav.svg");
+            &:hover {
+              content: url("/assets/icon-fav-hover.svg");
+            }
+          }
+          &.download {
+            content: url("/assets/icon-download.svg");
+            &:hover {
+              content: url("/assets/icon-download-hover.svg");
+            }
+          }
+          &.expand {
+            content: url("/assets/icon-max-normal.svg");
+            &:hover {
+              content: url("/assets/icon-max-hover.svg");
+            }
+          }
+        }
+      }
+      .titles {
+        position: absolute;
+        bottom: 50px;
+        left: 20px;
+        p {
+          color: white;
+          &.user {
+            font-size: 15px;
+            margin-bottom: 6px;
+          }
+          &.title {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    &:hover .gifoInfo {
+      display: block;
+      background-color: rgba(87, 46, 229, 0.5);
     }
   }
   .dn {
