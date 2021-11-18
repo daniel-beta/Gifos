@@ -23,7 +23,7 @@
 header {
   display: flex;
   justify-content: center;
-  border-top: #572ee5 10px solid;
+  border-top: #572ee5 6px solid;
   padding: 20px;
 }
 header .logo {
@@ -164,6 +164,7 @@ body#home main #search #search-bar .icon-search-gray {
 }
 body#home main #search #search-bar #suggestions .suggestion {
   display: flex;
+  cursor: pointer;
   margin: 0 20px;
   text-align: start;
   padding: 5px 0;
@@ -209,6 +210,7 @@ body#home main #trending #trendingSearches span {
   font-weight: normal;
   color: #572ee5;
   text-transform: capitalize;
+  cursor: pointer;
 }
 body#home main #searchResult {
   display: flex;
@@ -301,12 +303,13 @@ body main #trendingGifos p {
 }
 body main #trendingGifos #sliderTrending {
   position: relative;
-  width: 90%;
+  width: 92%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 35px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+  overflow: hidden;
 }
 body main #trendingGifos #sliderTrending .arrowsSlider {
   position: absolute;
@@ -394,68 +397,142 @@ body #searchResult .showMore {
 body #searchResult .showMore:hover {
   background-image: url("/assets/CTA-ver-mas-hover.svg");
 }
-body .gifoTrending {
+body #gifoTrendingSlider {
+  display: flex;
+  width: 90%;
+  overflow: hidden;
+}
+body #gifoTrendingSlider .gifoTrending {
+  height: 275px;
+  width: 357px;
+  display: flex;
+  padding-right: 8px;
+  justify-content: center;
+  position: relative;
+}
+body #gifoTrendingSlider .gifoTrending img {
+  width: 357px;
+  height: 275px;
+  object-fit: cover;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 355px;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions {
+  display: flex;
+  justify-content: flex-end;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon {
+  width: 32px;
+  height: 32px;
+  margin: 20px 20px 0 0;
+  cursor: pointer;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like {
+  content: url("/assets/icon-fav.svg");
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like:hover {
+  content: url("/assets/icon-fav-hover.svg");
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.download {
+  content: url("/assets/icon-download.svg");
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.download:hover {
+  content: url("/assets/icon-download-hover.svg");
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.expand {
+  content: url("/assets/icon-max-normal.svg");
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.expand:hover {
+  content: url("/assets/icon-max-hover.svg");
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .titles {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .titles p {
+  color: white;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .titles p.user {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+body #gifoTrendingSlider .gifoTrending .gifoInfo .titles p.title {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+body #gifoTrendingSlider .gifoTrending:hover .gifoInfo {
+  display: block;
+  background-color: rgba(87, 46, 229, 0.5);
+  overflow: hidden;
+}
+body #gifosResult .gifoTrending {
   height: 275px;
   width: 375px;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
-body .gifoTrending img {
+body #gifosResult .gifoTrending img {
   height: 275px;
 }
-body .gifoTrending .gifoInfo {
+body #gifosResult .gifoTrending .gifoInfo {
   display: none;
   position: absolute;
   height: 100%;
   width: 375px;
 }
-body .gifoTrending .gifoInfo .actions {
+body #gifosResult .gifoTrending .gifoInfo .actions {
   display: flex;
   justify-content: flex-end;
 }
-body .gifoTrending .gifoInfo .actions .icon {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon {
   width: 32px;
   height: 32px;
   margin: 20px 20px 0 0;
   cursor: pointer;
 }
-body .gifoTrending .gifoInfo .actions .icon.like {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.like {
   content: url("/assets/icon-fav.svg");
 }
-body .gifoTrending .gifoInfo .actions .icon.like:hover {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.like:hover {
   content: url("/assets/icon-fav-hover.svg");
 }
-body .gifoTrending .gifoInfo .actions .icon.download {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.download {
   content: url("/assets/icon-download.svg");
 }
-body .gifoTrending .gifoInfo .actions .icon.download:hover {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.download:hover {
   content: url("/assets/icon-download-hover.svg");
 }
-body .gifoTrending .gifoInfo .actions .icon.expand {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.expand {
   content: url("/assets/icon-max-normal.svg");
 }
-body .gifoTrending .gifoInfo .actions .icon.expand:hover {
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.expand:hover {
   content: url("/assets/icon-max-hover.svg");
 }
-body .gifoTrending .gifoInfo .titles {
+body #gifosResult .gifoTrending .gifoInfo .titles {
   position: absolute;
   bottom: 50px;
   left: 20px;
 }
-body .gifoTrending .gifoInfo .titles p {
+body #gifosResult .gifoTrending .gifoInfo .titles p {
   color: white;
 }
-body .gifoTrending .gifoInfo .titles p.user {
+body #gifosResult .gifoTrending .gifoInfo .titles p.user {
   font-size: 15px;
   margin-bottom: 6px;
 }
-body .gifoTrending .gifoInfo .titles p.title {
+body #gifosResult .gifoTrending .gifoInfo .titles p.title {
   margin-top: 0;
   font-size: 18px;
   font-weight: bold;
 }
-body .gifoTrending:hover .gifoInfo {
+body #gifosResult .gifoTrending:hover .gifoInfo {
   display: block;
   background-color: rgba(87, 46, 229, 0.5);
 }
