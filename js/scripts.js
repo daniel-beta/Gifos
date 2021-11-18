@@ -24,11 +24,12 @@ const getTrendingSearches = () => {
   const trendingSearches = document.querySelector('#trendingSearches');
   result.then((resp) => {
     for (let i = 0; i < 5; i++) {
-      const span = document.createElement('span');
-      span.textContent = `${resp.data[i]}, `
-      trendingSearches.appendChild(span);
+      trendingSearches.innerHTML +=
+        `<span onclick="searchSuggestion('${resp.data[i]}')">
+      ${resp.data[i]}, 
+    </span>`
     }
-    trendingSearches.lastChild.textContent = trendingSearches.lastChild.textContent.slice(0, -2)
+    trendingSearches.lastChild.textContent = trendingSearches.lastChild.textContent.slice(0, -7)
   }).catch((e) => {
     console.log('Error: ' + e);
   });
@@ -48,6 +49,8 @@ const trending = document.querySelector('#trending')
 const notFound = document.querySelector('#notFound')
 const showMore = document.querySelector('.showMore')
 
+/* SUGGESTIONS - SEARCH */
+
 const searchSuggestions = () => {
   searchValue.addEventListener('keyup', () => {
     if (searchValue.value !== '') {
@@ -65,6 +68,24 @@ const searchSuggestions = () => {
     }
     suggestionsDiv.innerHTML = '';
   })
+
+  searchValue.addEventListener('keyup', () => {
+    if (event.which === 13 || event.keyCode == 13) {
+      if (searchValue.value !== '') {
+        search(searchValue.value);
+        titleResult.classList.remove('dn')
+        trending.classList.add('dn')
+        showMore.classList.remove('dn');
+        suggestionsDiv.classList.add('dn')
+      } else {
+        gifosResult.innerHTML = '';
+        console.log("nichim")
+        titleResult.classList.add('dn');
+        notFound.classList.remove('dn');
+        showMore.classList.add('dn');
+      }
+    }
+  });
 }
 
 const closeSearch = () => {
@@ -91,17 +112,45 @@ const showSuggestions = suggestion => {
 
 const suggestionsDom = suggestionDom => {
   suggestionsDiv.innerHTML +=
-    `<div class='suggestion'>
+    `<div class='suggestion' onclick="searchSuggestion('${suggestionDom}')">
       <div class='icon-search-gray'></div>
       ${suggestionDom}
     </div>`
 }
 
+const searchSuggestion = suggestion => {
+  search(suggestion)
+  suggestionsDiv.classList.add('dn')
+  searchValue.value = suggestion
+  titleResult.textContent = suggestion
+  titleResult.classList.remove('dn')
+  trending.classList.add('dn')
+  if (searchValue.value !== '') {
+    iconSearch.classList.add('dn')
+    iconClose.classList.remove('dn')
+    iconSearchGray.classList.remove('dn')
+    closeSearch()
+  }
+}
 
+iconSearchGray.addEventListener('click', () => {
+  if (searchValue.value != '') {
+    search(searchValue.value);
+    titleResult.classList.remove('dn')
+    trending.classList.add('dn')
+    gifosResult.innerHTML = ''
+    suggestionsDiv.classList.add('dn')
+  } else {
+    gifosResult.innerHTML = ''
+  }
+});
+
+/* SEARCH FUNCTION */
 
 const search = (word) => {
   const urlSearch = `${giphyUrl}gifs/search?api_key=${apiKey}&q=${word}&q=&limit=12`;
   const result = getApi(urlSearch);
+  gifosResult.innerHTML = ''
   result.then((resp) => {
     if (resp.data.length === 0) {
       console.log('nada')
@@ -125,77 +174,113 @@ const search = (word) => {
   });
 }
 
-iconSearchGray.addEventListener('click', () => {
-  if (searchValue.value != '') {
-    gifosResult.innerHTML = ''
-    search(searchValue.value);
-    titleResult.classList.remove('dn')
-    trending.classList.add('dn')
-    suggestionsDiv.classList.add('dn')
-
-    /* lineSuggestions.classList.add('none');
-    showMore.classList.remove('none');
-    suggestionsContainer.innerHTML = '';
-    intentaConOtra.classList.add('none'); */
-  } else {
-    gifosResult.innerHTML = ''
-    /* showMore.classList.add('none');
-    intentaConOtra.classList.remove('none'); */
-  }
-});
-
-
-
-
-
-
-
-
+/* CREATE GIF CARDS */
 
 const createGifCards = (data) => {
   const gifoTrending = document.createElement('div');
   gifoTrending.classList.add('gifoTrending');
-  gifoTrending.innerHTML = 
-  `<img
-  src="${data.images.original.url}"
-  alt="${data.title}"
-  />
-  <div class="gifoInfo">
-    <div class="actions">
-      <div class="like icon"></div>
-      <div class="download icon"></div>
-      <div class="expand icon"></div>
-    </div>
-    <div class="titles">
-      <p class="user">${data.username}</p>
-      <p class="title">${data.title}</p>
-    </div>
-  </div>`
+  gifoTrending.innerHTML =
+    `<img
+      src="${data.images.original.url}"
+      alt="${data.title}"
+    />
+    <div class="gifoInfo">
+      <div class="actions">
+        <div class="like icon"></div>
+        <div class="download icon"></div>
+        <div class="expand icon"></div>
+      </div>
+      <div class="titles">
+        <p class="user">${data.username}</p>
+        <p class="title">${data.title}</p>
+      </div>
+    </div>`
   gifosResult.appendChild(gifoTrending)
-
 };
 
+/* SHOW MORE */
 
 let page = 12
-showMore.addEventListener('click', () =>{
-  console.log("CLICK")
+showMore.addEventListener('click', () => {
   page += 12;
   showMoreFunction(titleResult.textContent, page);
 });
 
-const showMoreFunction = (title, page) =>{
+const showMoreFunction = (title, page) => {
   const urlSearch = `${giphyUrl}gifs/search?api_key=${apiKey}&q=${title}&q=&limit=12&offset=${page}`;
   const result = getApi(urlSearch);
-  result.then((resp)=>{
-      resp.data.map((items, i) => createGifCards(items));
-      if (page > resp.data.length) {
-        console.log(page, "page", resp.data)
-      }
+  result.then((resp) => {
+    resp.data.map((items, i) => createGifCards(items));
+    if (12 > resp.data.length) {
+      showMore.classList.add('dn');
+    }
   }).catch((e) => {
-      console.log("Error: " + e);
+    console.log("Error: " + e);
   });
 }
 
+/* SLIDER */
+
+const sliderTrending = document.querySelector('#gifoTrendingSlider');
+const createGifCardsSlider = (data) => {
+  const gifSlider = document.createElement('div');
+  gifSlider.classList.add('gifoTrending');
+  gifSlider.innerHTML =
+    `<img
+      src="${data.images.original.url}"
+      alt="${data.title}"
+    />
+    <div class="gifoInfo">
+      <div class="actions">
+        <div class="like icon"></div>
+        <div class="download icon"></div>
+        <div class="expand icon"></div>
+      </div>
+      <div class="titles">
+        <p class="user">${data.username}</p>
+        <p class="title">${data.title}</p>
+      </div>
+    </div>`
+  sliderTrending.appendChild(gifSlider)
+};
+
+const trendingSlider = () => {
+  const urlTrending = `${giphyUrl}gifs/trending?api_key=${apiKey}&limit=25&rating=g`;
+  const result = getApi(urlTrending);
+  result.then((resp) => {
+    resp.data.map((item) => createGifCardsSlider(item));
+  }).catch((e) => {
+    console.log("Error: " + e);
+  });
+};
+
+const arrowLeft = document.getElementById('arrowLeft');
+const arrowRight = document.getElementById('arrowRight');
+
+arrowRight.addEventListener('click', () => {
+  let scrollAmount = 0;
+  let slideTimer = setInterval(() => {
+    sliderTrending.scrollLeft += 110;
+    scrollAmount += 10;
+    if (scrollAmount >= 100) {
+      window.clearInterval(slideTimer);
+    }
+  }, 20);
+});
+
+arrowLeft.addEventListener('click', () => {
+  let scrollAmount = 0;
+  let slideTimer = setInterval(() => {
+    sliderTrending.scrollLeft -= 110;
+    scrollAmount += 10;
+    if (scrollAmount >= 100) {
+      window.clearInterval(slideTimer);
+    }
+  }, 20);
+});
+
+/* FUNCTIONS */
 
 getTrendingSearches()
 searchSuggestions()
+trendingSlider();

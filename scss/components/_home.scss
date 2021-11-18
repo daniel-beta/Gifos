@@ -47,6 +47,7 @@ body#home {
         #suggestions {
           .suggestion {
             display: flex;
+            cursor: pointer;
             &:first-child {
               border-top: 1px solid $azul-claro;
               padding-top: 10px;
@@ -93,6 +94,7 @@ body#home {
           font-weight: normal;
           color: $morado;
           text-transform: capitalize;
+          cursor: pointer;
         }
       }
     }
