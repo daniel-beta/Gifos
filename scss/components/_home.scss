@@ -113,3 +113,33 @@ body#home {
     }
   }
 }
+
+/* MOBILE */
+@media (max-width: 428px) {
+  body#home {
+    main {
+      .titulo {
+        width: 312px;
+        line-height: 33px;
+      }
+      #search {
+        img {
+          max-width: 85%;
+        }
+        #search-bar {
+          max-width: 90%;
+          input {
+            width: 65%;
+          }
+        }
+      }
+      #trending {
+        #trendingSearches {
+          max-width: 60%;
+          text-align: center;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}

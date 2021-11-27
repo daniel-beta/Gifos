@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#572EE5;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="GIFOS">
+	<g id="_x30_0-UI-Kit" transform="translate(-858.000000, -2777.000000)">
+		<g id="icon-fav-hover" transform="translate(858.000000, 2777.000000)">
+			<path id="Rectangle-Copy-7" class="st0" d="M6,0h20c3.3,0,6,2.7,6,6v20c0,3.3-2.7,6-6,6H6c-3.3,0-6-2.7-6-6V6C0,2.7,2.7,0,6,0z"
+				/>
+			<g>
+				<path id="path-1_1_" class="st1" d="M16.3,9.5c1-1,2.3-1.5,3.6-1.5c1.4,0,2.7,0.5,3.6,1.5c1,1,1.5,2.3,1.5,3.6s-0.5,2.7-1.5,3.6
+					l-6.9,6.9c-0.3,0.3-0.8,0.3-1.1,0l-6.9-6.9c-2-2-2-5.2,0-7.2s5.2-2,7.2,0L16,9.8L16.3,9.5z M16,22l5.6-5.6l0.8-0.8
+					c0.7-0.7,1-1.6,1-2.5s-0.4-1.8-1-2.5c-0.7-0.7-1.6-1-2.5-1c-0.9,0-1.8,0.4-2.5,1l-0.8,0.8c-0.3,0.3-0.8,0.3-1.1,0l-0.8-0.8
+					c-1.4-1.4-3.6-1.4-5,0s-1.4,3.6,0,5L16,22z"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="GIFOS_1_">
+	<g id="_x32_4-Mobile-Gifo-Max" transform="translate(-261.000000, -427.000000)">
+		<g id="icon-fav-active">
+			<path id="path-1_2_" class="st1" d="M281.3,434c1.5,0,2.9,0.6,4,1.7c1.1,1.1,1.7,2.6,1.7,4.1c0,1.5-0.6,3-1.7,4.1l-7.7,7.9
+				c-0.3,0.3-0.9,0.3-1.2,0l-7.7-7.9c-2.2-2.3-2.2-5.9,0-8.2c2.2-2.3,5.8-2.3,8,0l0.3,0.3l0.3-0.3C278.4,434.6,279.8,434,281.3,434z
+				"/>
+		</g>
+	</g>
+</g>
+</svg>
