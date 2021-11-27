@@ -55,11 +55,34 @@ header .crear {
   display: flex;
   align-items: center;
 }
+header .menuMobile {
+  display: none;
+}
 
 /* IPAD */
 @media screen and (max-width: 768px) {
   header .logo {
     width: 25%;
+  }
+}
+/* MOBILE */
+@media (max-width: 428px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .menu,
+header .crear {
+    display: none;
+  }
+  header .menuMobile {
+    display: block;
+    content: url("/assets/burger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
   }
 }
 /* Colores */
@@ -117,6 +140,32 @@ footer #copyright p {
   font-weight: normal;
 }
 
+/* MOBILE */
+@media (max-width: 428px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer #social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer #social p {
+    font-size: 15px;
+  }
+  footer #social #redes-sociales {
+    gap: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  footer #social #redes-sociales a {
+    margin-left: 0;
+  }
+  footer #copyright {
+    font-size: 14px;
+  }
+}
 /* Colores */
 body#home main #search {
   display: flex;
@@ -226,31 +275,140 @@ body#home main #searchResult #titleResult {
   padding-top: 30px;
 }
 
+/* MOBILE */
+@media (max-width: 428px) {
+  body#home main .titulo {
+    width: 312px;
+    line-height: 33px;
+  }
+  body#home main #search img {
+    max-width: 85%;
+  }
+  body#home main #search #search-bar {
+    max-width: 90%;
+  }
+  body#home main #search #search-bar input {
+    width: 65%;
+  }
+  body#home main #trending #trendingSearches {
+    max-width: 60%;
+    text-align: center;
+    line-height: 25px;
+  }
+}
 /* Colores */
-body#favoritos header .menu #favoritos {
+body#likesPage header .menu #favoritos {
   color: #9cafc3;
 }
-body#favoritos main #icono-titulo,
-body#favoritos main #contenedor-vacio {
+body#likesPage main #icono-titulo,
+body#likesPage main #emptyContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body#favoritos main #contenedor-vacio {
+body#likesPage main #icono-titulo.dn,
+body#likesPage main #emptyContainer.dn {
+  display: none;
+}
+body#likesPage main #emptyContainer {
   margin: 80px 0;
+}
+body#likesPage main #likesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 40px 0;
+  gap: 29px;
+}
+body#likesPage main #likesContainer .gifoCardsLike {
+  display: flex;
+  height: 275px;
+  justify-content: center;
+  max-height: 200px;
+  max-width: 260px;
+  overflow: hidden;
+  width: 375px;
+}
+body#likesPage main #likesContainer .gifoCardsLike img {
+  height: 200px;
+  width: 260px;
+  object-fit: cover;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo {
+  display: none;
+  position: absolute;
+  height: 200px;
+  width: 260px;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions {
+  display: flex;
+  justify-content: flex-end;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon {
+  width: 32px;
+  height: 32px;
+  margin: 20px 20px 0 0;
+  cursor: pointer;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.like {
+  content: url("/assets/icon-like-active.svg");
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.like:hover {
+  content: url("/assets/icon-fav-hover.svg");
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.download {
+  content: url("/assets/icon-download.svg");
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.download:hover {
+  content: url("/assets/icon-download-hover.svg");
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.expand {
+  content: url("/assets/icon-max-normal.svg");
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.expand:hover {
+  content: url("/assets/icon-max-hover.svg");
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo:hover .gifoInfo {
+  display: block;
+  background-color: rgba(87, 46, 229, 0.5);
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .titles {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .titles p {
+  color: white;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .titles p.user {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .titles p.title {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .titles .actions .icon {
+  margin: 15px 10px 0 0;
+}
+body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
+  display: block;
+  background-color: rgba(87, 46, 229, 0.5);
 }
 
 /* Colores */
-body#mis-gifos header .menu #mis-gifos {
+body#mis-gifos-page header .menu #mis-gifos {
   color: #9cafc3;
 }
-body#mis-gifos main #icono-titulo,
-body#mis-gifos main #contenedor-vacio {
+body#mis-gifos-page main #icono-titulo,
+body#mis-gifos-page main #contenedor-vacio {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body#mis-gifos main #contenedor-vacio {
+body#mis-gifos-page main #contenedor-vacio {
   margin: 80px 0;
 }
 
@@ -258,6 +416,79 @@ body#mis-gifos main #contenedor-vacio {
 body {
   margin: 0;
   font-family: Montserrat;
+}
+body #expandContainer {
+  position: relative;
+}
+body #expandContainer #expandBackground {
+  position: fixed;
+  background-color: white;
+  opacity: 0.95;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+body #expandContainer #expandContent {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  top: calc(50% - 350px);
+  left: calc(50% - 250px);
+  justify-content: center;
+}
+body #expandContainer #expandContent #expandCloseIcon {
+  background-image: url(/assets/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -25px;
+  right: -100px;
+  cursor: pointer;
+}
+body #expandContainer #expandContent #gifDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+body #expandContainer #expandContent #gifDetails .icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+body #expandContainer #expandContent #gifDetails .icon.like {
+  content: url("/assets/icon-fav.svg");
+}
+body #expandContainer #expandContent #gifDetails .icon.like:hover {
+  content: url("/assets/icon-fav-hover.svg");
+}
+body #expandContainer #expandContent #gifDetails .icon.like.active {
+  content: url("/assets/icon-like-active.svg");
+}
+body #expandContainer #expandContent #gifDetails .icon.download {
+  content: url("/assets/icon-download.svg");
+}
+body #expandContainer #expandContent #gifDetails .icon.download:hover {
+  content: url("/assets/icon-download-hover.svg");
+}
+body #expandContainer #expandContent #gifDetails .icon.expand {
+  content: url("/assets/icon-max-normal.svg");
+}
+body #expandContainer #expandContent #gifDetails .icon.expand:hover {
+  content: url("/assets/icon-max-hover.svg");
+}
+body #expandContainer #expandContent #usernameGif {
+  font-size: 14px;
+  font-weight: 400;
+}
+body #expandContainer #expandContent #titleGif {
+  font-size: 16px;
+  font-weight: 800;
 }
 body main {
   display: flex;
@@ -301,6 +532,9 @@ body main #trendingGifos p {
   font-size: 18px;
   font-weight: normal;
 }
+body main #trendingGifos p br {
+  display: none;
+}
 body main #trendingGifos #sliderTrending {
   position: relative;
   width: 92%;
@@ -340,12 +574,12 @@ body #searchResult #gifosResult {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1440px;
+  max-width: 1400px;
+  gap: 29px;
 }
 body #searchResult #gifosResult .gifoTrending {
   max-height: 200px;
   max-width: 260px;
-  margin: 15px;
 }
 body #searchResult #gifosResult .gifoTrending img {
   height: 200px;
@@ -437,6 +671,9 @@ body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like {
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like:hover {
   content: url("/assets/icon-fav-hover.svg");
 }
+body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like.active {
+  content: url("/assets/icon-like-active.svg");
+}
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.download {
   content: url("/assets/icon-download.svg");
 }
@@ -503,6 +740,9 @@ body #gifosResult .gifoTrending .gifoInfo .actions .icon.like {
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.like:hover {
   content: url("/assets/icon-fav-hover.svg");
 }
+body #gifosResult .gifoTrending .gifoInfo .actions .icon.like.active {
+  content: url("/assets/icon-like-active.svg");
+}
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.download {
   content: url("/assets/icon-download.svg");
 }
@@ -541,6 +781,40 @@ body .dn {
 }
 body .db {
   display: block;
+}
+
+/* MOBILE */
+@media (max-width: 428px) {
+  body main h1.titulo {
+    font-size: 25px;
+  }
+  body main #trendingGifos p {
+    max-width: 80%;
+    line-height: 23px;
+    text-align: center;
+    margin: 0;
+  }
+  body main #trendingGifos p br {
+    display: block;
+  }
+  body main #trendingGifos #sliderTrending {
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+  body main #trendingGifos #sliderTrending #arrowRight,
+body main #trendingGifos #sliderTrending #arrowLeft {
+    display: none;
+  }
+  body main #trendingGifos #sliderTrending #gifoTrendingSlider {
+    overflow: scroll;
+  }
+  body main #trendingGifos #sliderTrending #gifoTrendingSlider .gifoTrending {
+    align-items: center;
+  }
+  body main #trendingGifos #sliderTrending #gifoTrendingSlider .gifoTrending img {
+    width: 280px;
+    height: 250px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

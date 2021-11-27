@@ -79,7 +79,6 @@ const searchSuggestions = () => {
         suggestionsDiv.classList.add('dn')
       } else {
         gifosResult.innerHTML = '';
-        console.log("nichim")
         titleResult.classList.add('dn');
         notFound.classList.remove('dn');
         showMore.classList.add('dn');
@@ -106,7 +105,7 @@ const showSuggestions = suggestion => {
       suggestionsDom(elementSuggestion.name);
     });
   }).catch((e) => {
-    console.log('Ha ocurrido un error ' + e);
+    console.log('Error:  ' + e);
   });
 }
 
@@ -131,19 +130,22 @@ const searchSuggestion = suggestion => {
     iconSearchGray.classList.remove('dn')
     closeSearch()
   }
+  searchGray()
 }
 
-iconSearchGray.addEventListener('click', () => {
-  if (searchValue.value != '') {
-    search(searchValue.value);
-    titleResult.classList.remove('dn')
-    trending.classList.add('dn')
-    gifosResult.innerHTML = ''
-    suggestionsDiv.classList.add('dn')
-  } else {
-    gifosResult.innerHTML = ''
-  }
-});
+const searchGray = () => {
+  iconSearchGray.addEventListener('click', () => {
+    if (searchValue.value != '') {
+      search(searchValue.value);
+      titleResult.classList.remove('dn')
+      trending.classList.add('dn')
+      gifosResult.innerHTML = ''
+      suggestionsDiv.classList.add('dn')
+    } else {
+      gifosResult.innerHTML = ''
+    }
+  })
+}
 
 /* SEARCH FUNCTION */
 
@@ -153,7 +155,6 @@ const search = (word) => {
   gifosResult.innerHTML = ''
   result.then((resp) => {
     if (resp.data.length === 0) {
-      console.log('nada')
       notFound.classList.remove('dn');
       showMore.classList.add('dn');
     } else {
@@ -174,37 +175,45 @@ const search = (word) => {
   });
 }
 
+/* CREATE CARD */
+
+const createCard = (gifoId, imgUrlGif, titleGif, usernameGif, where) => {
+  where.innerHTML =
+    `<img
+    src="${imgUrlGif}"
+    alt="${titleGif}"
+  />
+  <div class="gifoInfo">
+    <div class="actions">
+      <div class="id${gifoId} like icon" onclick="like('${gifoId}','${titleGif}','${usernameGif}','${imgUrlGif}')"></div>
+      <div class="download icon" onclick="download('${imgUrlGif}', '${titleGif}')"></div>
+      <div class="expand icon" onclick="expand('${gifoId}','${imgUrlGif}', '${titleGif}', '${usernameGif}')"></div>
+    </div>
+    <div class="titles">
+      <p class="user">${usernameGif}</p>
+      <p class="title">${titleGif}</p>
+    </div>
+  </div>`
+}
+
 /* CREATE GIF CARDS */
 
 const createGifCards = (data) => {
   const gifoTrending = document.createElement('div');
   gifoTrending.classList.add('gifoTrending');
-  gifoTrending.innerHTML =
-    `<img
-      src="${data.images.original.url}"
-      alt="${data.title}"
-    />
-    <div class="gifoInfo">
-      <div class="actions">
-        <div class="like icon"></div>
-        <div class="download icon"></div>
-        <div class="expand icon"></div>
-      </div>
-      <div class="titles">
-        <p class="user">${data.username}</p>
-        <p class="title">${data.title}</p>
-      </div>
-    </div>`
+  createCard(data.id, data.images.original.url, data.title, data.username, gifoTrending)
   gifosResult.appendChild(gifoTrending)
 };
 
 /* SHOW MORE */
 
-let page = 12
-showMore.addEventListener('click', () => {
-  page += 12;
-  showMoreFunction(titleResult.textContent, page);
-});
+const showMoreAction = () => {
+  let page = 12
+  showMore.addEventListener('click', () => {
+    page += 12;
+    showMoreFunction(titleResult.textContent, page);
+  });
+}
 
 const showMoreFunction = (title, page) => {
   const urlSearch = `${giphyUrl}gifs/search?api_key=${apiKey}&q=${title}&q=&limit=12&offset=${page}`;
@@ -222,26 +231,44 @@ const showMoreFunction = (title, page) => {
 /* SLIDER */
 
 const sliderTrending = document.querySelector('#gifoTrendingSlider');
+
 const createGifCardsSlider = (data) => {
   const gifSlider = document.createElement('div');
   gifSlider.classList.add('gifoTrending');
-  gifSlider.innerHTML =
-    `<img
-      src="${data.images.original.url}"
-      alt="${data.title}"
-    />
-    <div class="gifoInfo">
-      <div class="actions">
-        <div class="like icon"></div>
-        <div class="download icon"></div>
-        <div class="expand icon"></div>
-      </div>
-      <div class="titles">
-        <p class="user">${data.username}</p>
-        <p class="title">${data.title}</p>
-      </div>
-    </div>`
+  createCard(data.id, data.images.original.url, data.title, data.username, gifSlider)
   sliderTrending.appendChild(gifSlider)
+  iconLikeActive(data.id)
+};
+
+const expand = (gifoId, imgUrlGif, titleGif, usernameGif) => {
+  const body = document.getElementsByTagName('body')[0]
+  const header = document.getElementsByTagName('header')[0]
+  header.insertAdjacentHTML('beforebegin',
+    `<section id="expandContainer">
+    <div id="expandBackground"></div>
+    <div id="expandContent">
+      <div id="expandCloseIcon"></div>
+      <img src="${imgUrlGif}" alt="${titleGif}"/>
+      <div id="gifDetails">
+        <div id="nameGif">
+          <div id="usernameGif">${usernameGif}</div>
+          <div id="titleGif">${titleGif}</div>
+        </div>
+        <div class="id${gifoId} like icon" onclick="like('${gifoId}','${titleGif}','${usernameGif}','${imgUrlGif}')"></div>
+        <div class="download icon" onclick="download('${imgUrlGif}', '${titleGif}')"></div>
+      </div>
+    </div>
+  </section>`);
+  const expandCloseIcon = document.querySelector('#expandCloseIcon')
+  const expandContainer = document.querySelector('#expandContainer')
+  expandCloseIcon.addEventListener('click', () => {
+    body.removeChild(expandContainer)
+  })
+  const expandBackground = document.querySelector('#expandBackground')
+  expandBackground.addEventListener('click', () => {
+    body.removeChild(expandContainer)
+  })
+  iconLikeActive(gifoId)
 };
 
 const trendingSlider = () => {
@@ -279,8 +306,127 @@ arrowLeft.addEventListener('click', () => {
   }, 20);
 });
 
+/* DOWNLOAD */
+
+const dataURL = async url => {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return URL.createObjectURL(blob);
+}
+
+const download = async (gifDownload, name) => {
+  const a = document.createElement("a");
+  a.href = await dataURL(gifDownload);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+/* LIKES */
+
+const like = (gifoId, titleGif, usernameGif, imgUrlGif) => {
+  const dataGifo = {
+    id: gifoId,
+    title: titleGif,
+    username: usernameGif,
+    url: imgUrlGif
+  }
+  const likeSection = JSON.parse(localStorage.getItem('gif')) || [];
+  const likeIcon = document.querySelector(`.id${gifoId}`)
+
+  likeSection.map(element => {
+    if (element.id === gifoId) {
+      likeIcon.classList.add('active');
+    }
+  })
+  if (checkLike(gifoId) === false) {
+    likeIcon.classList.add('active');
+    addLike(dataGifo);
+  } else {
+    console.log("quitando like");
+    likeIcon.classList.remove('active');
+    removeLike(gifoId);
+  }
+}
+
+let checkLike = gifoId => {
+  let likeGifo = false;
+  const likeSection = JSON.parse(localStorage.getItem('gif')) || [];
+  for (let gifo of likeSection) {
+    if (gifo.id === gifoId) {
+      likeGifo = true;
+    }
+  }
+  return likeGifo
+}
+
+const addLike = gifoLike => {
+  const likes = JSON.parse(localStorage.getItem('gif')) || [];
+  likes.push(gifoLike);
+  localStorage.setItem('gif', JSON.stringify(likes));
+  domLikes();
+}
+
+const removeLike = (gifoID) => {
+  const likeSection = JSON.parse(localStorage.getItem('gif')) || [];
+  let likeIndex;
+  likeSection.forEach((gifoInfo, index) => {
+    if (gifoInfo.id === gifoID) {
+      likeIndex = index;
+    }
+  });
+  likeSection.splice(likeIndex, 1);
+  localStorage.setItem('gif', JSON.stringify(likeSection));
+  domLikes();
+};
+
+const emptyContainer = document.querySelector('#emptyContainer');
+const likesContainer = document.querySelector('#likesContainer');
+
+const domLikes = () => {
+  if (document.querySelector('#likesPage')) {
+    const gifosLs = JSON.parse(localStorage.getItem('gif')) || [];
+    if (gifosLs.length !== 0) {
+      emptyContainer.classList.add('dn');
+      console.log(gifosLs);
+      likesContainer.innerHTML = '';
+      gifosLs.forEach((data, index) => {
+        const gifoCardsLike = document.createElement('div');
+        gifoCardsLike.classList.add('gifoCardsLike');
+        createCard(data.id, data.url, data.title, data.username, gifoCardsLike)
+        likesContainer.appendChild(gifoCardsLike)
+      });
+    } else {
+      emptyContainer.classList.remove('dn');
+      likesContainer.innerHTML = '';
+    }
+  }
+}
+
+const iconLikeActive = gifoId => {
+  const likeSection = JSON.parse(localStorage.getItem('gif')) || [];
+  likeSection.map(elemento => {
+    if (elemento.id === gifoId) {
+      const activeLike = document.querySelector(`.id${gifoId}`)
+      activeLike.classList.add('active');
+    }
+  })
+}
+
 /* FUNCTIONS */
 
-getTrendingSearches()
-searchSuggestions()
+if (document.querySelector('#home')) {
+  getTrendingSearches()
+  searchSuggestions()
+  if (document.querySelector('#gifosResult')) {
+    showMoreAction();
+  }
+}
+
+if (document.querySelector('#likesPage')) {
+  console.log("Estas en favoritos");
+  domLikes();
+}
+
 trendingSlider();

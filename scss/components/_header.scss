@@ -1,46 +1,70 @@
 @import "datos.scss";
 
 header {
+  display: flex;
+  justify-content: center;
+  border-top: $morado 6px solid;
+  padding: 20px;
+  .logo {
+    width: 40%;
+  }
+  .menu {
     display: flex;
-    justify-content: center;
-    border-top: $morado 6px solid;
-    padding: 20px;
-    .logo {
-        width: 40%;
-    }
-    .menu {
-        display: flex;
-        align-items: center;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 600;
-        ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            li {
-                padding: 0 20px;
-                color: $morado;
-                a {
-                    text-decoration: none;
-                    &:visited {
-                        color: $morado;
-                    }
-                }
-            }
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 0 20px;
+        color: $morado;
+        a {
+          text-decoration: none;
+          &:visited {
+            color: $morado;
+          }
         }
+      }
     }
-    .crear {
-        display: flex;
-        align-items: center;
-    }
+  }
+  .crear {
+    display: flex;
+    align-items: center;
+  }
+  .menuMobile {
+    display: none;
+  }
 }
 
 /* IPAD */
 @media screen and (max-width: 768px) {
-    header {
-        .logo {
-            width: 25%;
-        }
+  header {
+    .logo {
+      width: 25%;
     }
+  }
+}
+
+/* MOBILE */
+@media (max-width: 428px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    .menu,
+    .crear {
+      display: none;
+    }
+    .menuMobile {
+      display: block;
+      content: url("/assets/burger.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      margin: 20px;
+    }
+  }
 }

@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/assets/logo-mobile.svg" type="image/png" />
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>GIFOS - Favoritos</title>
-</head>
-<body id="favoritos">
+  </head>
+  <body id="likesPage">
     <header>
-        <div class="logo">
-            <a href="/"><img src="/assets/logo-desktop.svg" alt="logo-gifos"></a>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li>Modo Nocturno</li>
-                <li><a href="/favoritos.html" id="favoritos">Favoritos</a></li>
-                <li><a href="/mis-gifos.html" id="mis-gifos">Mis Gifos</a></li>
-            </ul>
-        </nav>
-        <div class="crear">
-            <a href="/crear-gifos.html" id="crear-gifos"><img src="/assets/button-crear.svg" alt="icono-crear"></a>
-        </div>
+      <div class="logo">
+        <a href="/"><img src="/assets/logo-desktop.svg" alt="logo-gifos" /></a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li>Modo Nocturno</li>
+          <li><a href="/favoritos.html" id="favoritos">Favoritos</a></li>
+          <li><a href="/mis-gifos.html" id="mis-gifos">Mis Gifos</a></li>
+        </ul>
+      </nav>
+      <div class="crear">
+        <a href="/crear-gifos.html" id="crear-gifos"
+          ><img src="/assets/button-crear.svg" alt="icono-crear"
+        /></a>
+      </div>
     </header>
     <main>
-        <section id="icono-titulo">
-            <img src="/assets/icon-favoritos.svg" alt="icono-favoritos">
-            <h2 class="subtitulo">Favoritos</h2>
-        </section>
-        <section id="contenedor-vacio">
-            <img src="/assets/icon-fav-sin-contenido.svg" alt="imagen-favoritos">
-            <h3 class="subtitulo-secundario">"¡Guarda tu primer GIFO en Favoritos <br/> que se muestre aquí!"</h3>
-        </section>
+      <section id="icono-titulo">
+        <img src="/assets/icon-favoritos.svg" alt="icono-favoritos" />
+        <h2 class="subtitulo">Favoritos</h2>
+      </section>
+      <section id="emptyContainer">
+        <img src="/assets/icon-fav-sin-contenido.svg" alt="imagen-favoritos" />
+        <h3 class="subtitulo-secundario">
+          "¡Guarda tu primer GIFO en Favoritos <br />
+          que se muestre aquí!"
+        </h3>
+      </section>
+      <section id="likesContainer"></section>
+      <div id="trendingGifos">
+        <h2 class="subtitulo">Trending GIFOS</h2>
+        <p>Mira los últimos <br> GIFOS de nuestra comunidad.</p>
+        <div id="sliderTrending">
+          <div id="gifoTrendingSlider">
+          </div>
+          <div id="arrowRight" class="arrowsSlider"></div>
+          <div id="arrowLeft" class="arrowsSlider"></div>
+        </div>
+      </div>
     </main>
     <footer>
-        <div id="social">
-            <p>Compartir en:</p>
-            <div id="redes-sociales">
-                <a href="/" id="facebook" target="_blank"></a>
-                <a href="/" id="twitter" target="_blank"></a>
-                <a href="/" id="instagram" target="_blank"></a>
-            </div>
+      <div id="social">
+        <p>Compartir en:</p>
+        <div id="redes-sociales">
+          <a href="/" title="facebook" id="facebook" target="_blank"></a>
+          <a href="/" title="twitter" id="twitter" target="_blank"></a>
+          <a href="/" title="instagram" id="instagram" target="_blank"></a>
         </div>
-        <div id="copyright">
-            <p>© GIFOS 2020 All Rights Reserved.</p>
-        </div>
+      </div>
+      <div id="copyright">
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+      </div>
     </footer>
-</body>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
