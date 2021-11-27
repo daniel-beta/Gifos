@@ -414,11 +414,29 @@ const iconLikeActive = gifoId => {
   })
 }
 
+const menuMobile = () => {
+  const iconMenuMobile = document.querySelector('.menuMobile')
+  const menuList = document.querySelector("#menuList")
+  const header = document.getElementsByTagName('header')
+  iconMenuMobile.addEventListener('click', e => {
+    e.preventDefault()
+    if (menuList.classList.contains("open")) {
+      menuList.classList.remove("open")
+      header[0].classList.remove("open")
+    } else {
+      menuList.classList.add("open")
+      header[0].classList.add("open")
+    }
+  })
+  console.log(header[0]);
+}
+
 /* FUNCTIONS */
 
 if (document.querySelector('#home')) {
   getTrendingSearches()
   searchSuggestions()
+  menuMobile()
   if (document.querySelector('#gifosResult')) {
     showMoreAction();
   }
