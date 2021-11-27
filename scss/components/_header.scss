@@ -37,10 +37,13 @@ header {
   .menuMobile {
     display: none;
   }
+  #menuList {
+    display: none;
+  }
 }
 
-/* IPAD */
-@media screen and (max-width: 768px) {
+/* TABLET */
+@media screen and (max-width: 790px) {
   header {
     .logo {
       width: 25%;
@@ -49,10 +52,20 @@ header {
 }
 
 /* MOBILE */
-@media (max-width: 428px) {
+@media (max-width: 640px) {
   header {
     display: flex;
     justify-content: space-between;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 3;
+    box-shadow: 4px 4px 18px rgb(0 0 0 / 12%);
+    top: 0;
+    .logo {
+      padding-left: 20px;
+    }
     .menu,
     .crear {
       display: none;
@@ -65,6 +78,54 @@ header {
       width: 20px;
       height: 20px;
       margin: 20px;
+    }
+    #menuList {
+      display: none;
+      &.open {
+        background-color: $morado;
+        opacity: 0.9;
+        display: flex;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 90px;
+        ul {
+          display: flex;
+          width: 100%;
+          padding-left: 0;
+          flex-direction: column;
+          justify-content: flex-start;
+          list-style: none;
+          margin-top: 35px;
+          li {
+            margin-top: 8px;
+            height: 50px;
+            hr {
+              width: 40px;
+              opacity: 0.5;
+              margin-top: 12px;
+              margin-bottom: 0;
+            }
+          }
+          li, a {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    &.open {
+      position: fixed;
+      width: 100%;
+      background: white;
+      z-index: 3;
     }
   }
 }

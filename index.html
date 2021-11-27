@@ -13,11 +13,11 @@
       <div class="logo">
         <a href="/"><img src="/assets/logo-desktop.svg" alt="logo-gifos" /></a>
       </div>
-      <nav class="menu">
+      <nav class="menu" aria-label="menuDesktop">
         <ul>
-          <li>Modo Nocturno</li>
-          <li><a href="/favoritos.html" id="favoritos">Favoritos</a></li>
-          <li><a href="/mis-gifos.html" id="mis-gifos">Mis Gifos</a></li>
+          <li class="nightMode">Modo Nocturno</li>
+          <li><a href="/favoritos.html">Favoritos</a></li>
+          <li><a href="/mis-gifos.html">Mis Gifos</a></li>
         </ul>
       </nav>
       <div class="crear">
@@ -26,6 +26,13 @@
         </a>
       </div>
       <div class="menuMobile"></div>
+      <nav id="menuList" aria-label="menuDesktop">
+        <ul>
+          <li class="nightMode">Modo Nocturno<hr></li>
+          <li><a href="/favoritos.html">Favoritos</a><hr></li>
+          <li><a href="/mis-gifos.html">Mis Gifos</a><hr></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <div id="search">

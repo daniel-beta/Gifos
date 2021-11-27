@@ -379,9 +379,10 @@ body {
 }
 
 /* MOBILE */
-@media (max-width: 428px) {
+@media (max-width: 640px) {
   body {
     main {
+      margin-top: 100px;
       h1.titulo {
         font-size: 25px;
       }
