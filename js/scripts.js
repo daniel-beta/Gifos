@@ -274,6 +274,7 @@ const expand = (gifoId, imgUrlGif, titleGif, usernameGif) => {
 const trendingSlider = () => {
   const urlTrending = `${giphyUrl}gifs/trending?api_key=${apiKey}&limit=25&rating=g`;
   const result = getApi(urlTrending);
+  arrows()
   result.then((resp) => {
     resp.data.map((item) => createGifCardsSlider(item));
   }).catch((e) => {
@@ -281,30 +282,32 @@ const trendingSlider = () => {
   });
 };
 
-const arrowLeft = document.getElementById('arrowLeft');
-const arrowRight = document.getElementById('arrowRight');
+const arrows = () => {
+  const arrowLeft = document.getElementById('arrowLeft');
+  const arrowRight = document.getElementById('arrowRight');
 
-arrowRight.addEventListener('click', () => {
-  let scrollAmount = 0;
-  let slideTimer = setInterval(() => {
-    sliderTrending.scrollLeft += 110;
-    scrollAmount += 10;
-    if (scrollAmount >= 100) {
-      window.clearInterval(slideTimer);
-    }
-  }, 20);
-});
+  arrowRight.addEventListener('click', () => {
+    let scrollAmount = 0;
+    let slideTimer = setInterval(() => {
+      sliderTrending.scrollLeft += 110;
+      scrollAmount += 10;
+      if (scrollAmount >= 100) {
+        window.clearInterval(slideTimer);
+      }
+    }, 20);
+  });
 
-arrowLeft.addEventListener('click', () => {
-  let scrollAmount = 0;
-  let slideTimer = setInterval(() => {
-    sliderTrending.scrollLeft -= 110;
-    scrollAmount += 10;
-    if (scrollAmount >= 100) {
-      window.clearInterval(slideTimer);
-    }
-  }, 20);
-});
+  arrowLeft.addEventListener('click', () => {
+    let scrollAmount = 0;
+    let slideTimer = setInterval(() => {
+      sliderTrending.scrollLeft -= 110;
+      scrollAmount += 10;
+      if (scrollAmount >= 100) {
+        window.clearInterval(slideTimer);
+      }
+    }, 20);
+  });
+}
 
 /* DOWNLOAD */
 
@@ -428,7 +431,65 @@ const menuMobile = () => {
       header[0].classList.add("open")
     }
   })
-  console.log(header[0]);
+}
+
+/* CREATE GIFO */
+
+const video = document.querySelector('#createGifos')
+const buttonCreateGifo = document.querySelector('#buttonCreateGifo')
+const titleCreateGifo = document.querySelector('.titulo')
+const textCreateGifo = document.querySelector('#textCreateGifo')
+const buttonRecordGifo = document.querySelector('#buttonRecordGifo')
+const buttonStopGifo = document.querySelector('#buttonStopGifo')
+let recorder
+
+const createGifo = () => {
+  buttonCreateGifo.addEventListener('click', () => {
+    getStreamAndRecord()
+    startCreateGifo()
+  })
+}
+
+const getStreamAndRecord = () => {
+  titleCreateGifo.innerHTML = "¿Nos das acceso <br> a tu cámara?"
+  textCreateGifo.innerHTML = "El acceso a tu camara será válido sólo <br> por el tiempo en el que estés creando el GIFO."
+  document.querySelector('#step1').classList.add('active')
+  document.querySelector('#buttonCreateGifo').classList.add('dn')
+  navigator.mediaDevices.getUserMedia({
+    audio: false,
+    video: {
+      height: { max: 300 }
+    }
+  })
+    .then(function (stream) {
+      video.srcObject = stream;
+      video.play()
+      buttonRecordGifo.classList.remove('dn')
+      document.querySelector('#step1').classList.remove('active')
+      document.querySelector('#step2').classList.add('active')
+
+      recorder = recorder(stream, {
+        type: 'gif',
+        frameRate: 1,
+        quality: 10,
+        width: 360,
+        hidden: 240,
+        onGifRecordingStarted: function () {
+          console.log('started')
+        },
+      });
+    })
+    .catch(function (err) {
+      console.log(err)
+    })
+}
+
+const startCreateGifo = () => {
+  buttonRecordGifo.addEventListener('click', () => {
+    buttonRecordGifo.classList.add('dn')
+    buttonStopGifo.classList.remove('dn')
+    /* recorder.startRecording(); */
+  })
 }
 
 /* FUNCTIONS */
@@ -436,15 +497,19 @@ const menuMobile = () => {
 if (document.querySelector('#home')) {
   getTrendingSearches()
   searchSuggestions()
-  menuMobile()
   if (document.querySelector('#gifosResult')) {
-    showMoreAction();
+    showMoreAction()
   }
 }
 
 if (document.querySelector('#likesPage')) {
-  console.log("Estas en favoritos");
   domLikes();
 }
 
-trendingSlider();
+if (!document.querySelector('#createGifosPage')) {
+  trendingSlider()
+} else {
+  createGifo()
+}
+
+menuMobile()
