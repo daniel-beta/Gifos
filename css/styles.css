@@ -474,6 +474,150 @@ body#mis-gifos-page main #contenedor-vacio {
 }
 
 /* Colores */
+body#createGifosPage main {
+  height: 82vh;
+}
+body#createGifosPage main #cameraSection {
+  display: flex;
+}
+body#createGifosPage main #cameraSection #svgCamera {
+  content: url("/assets/camara.svg");
+}
+body#createGifosPage main #cameraSection #svgProjection {
+  content: url("/assets/element-luz-camara.svg");
+  margin-left: 4px;
+  padding-top: 2px;
+}
+body#createGifosPage main #cameraSection #movie {
+  display: flex;
+  align-items: flex-end;
+}
+body#createGifosPage main #cameraSection #movie #svgMovie {
+  content: url("/assets/movie.svg");
+  margin-left: 20px;
+}
+body#createGifosPage main #cameraSection #cameraContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #572ee5;
+  width: 688px;
+  height: 390px;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 93%;
+  height: 90%;
+  position: relative;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners .corners {
+  width: 25px;
+  height: 27px;
+  position: absolute;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners .corners#cornerTopRight {
+  border-top: 1px solid #50e3c2;
+  border-right: 1px solid #50e3c2;
+  top: 0;
+  right: 0;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners .corners#cornerTopLeft {
+  border-top: 1px solid #50e3c2;
+  border-left: 1px solid #50e3c2;
+  top: 0;
+  left: 0;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners .corners#cornerBottomRight {
+  border-bottom: 1px solid #50e3c2;
+  border-right: 1px solid #50e3c2;
+  bottom: 0;
+  right: 0;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners .corners#cornerBottomLeft {
+  border-bottom: 1px solid #50e3c2;
+  border-left: 1px solid #50e3c2;
+  bottom: 0;
+  left: 0;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners h1.titulo {
+  font-size: 25px;
+  line-height: 35px;
+  margin-bottom: 10px;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 29px;
+  margin-top: 0;
+}
+body#createGifosPage main #cameraSection #cameraContainer #cameraBox video {
+  position: absolute;
+}
+body#createGifosPage main #cameraSection #cameraContainer #steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+}
+body#createGifosPage main #cameraSection #cameraContainer #steps .steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #572ee5;
+  color: #572ee5;
+  font-size: 18px;
+  font-weight: 600;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+body#createGifosPage main #cameraSection #cameraContainer #steps .steps.active {
+  background-color: #572ee5;
+  color: white;
+}
+body#createGifosPage main #cameraButtonSection {
+  width: 796px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+  margin-top: 10px;
+}
+body#createGifosPage main #cameraButtonSection #divider {
+  width: 100%;
+  height: 7px;
+  background-color: #572ee5;
+  border-radius: 10px;
+}
+body#createGifosPage main #cameraButtonSection #buttonCreateGifo {
+  content: url("/assets/CTA-start.svg");
+  width: 127px;
+  margin: 20px;
+  cursor: pointer;
+}
+body#createGifosPage main #cameraButtonSection #buttonRecordGifo {
+  content: url("/assets/CTA-record.svg");
+  width: 127px;
+  margin: 20px;
+  cursor: pointer;
+}
+body#createGifosPage main #cameraButtonSection #buttonStopGifo {
+  content: url("/assets/CTA-stop.svg");
+  width: 127px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* Colores */
 body {
   margin: 0;
   font-family: Montserrat;

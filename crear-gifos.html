@@ -8,24 +8,79 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <title>GIFOS</title>
   </head>
-  <body>
+  <body id="createGifosPage">
     <header>
       <div class="logo">
         <a href="/"><img src="/assets/logo-desktop.svg" alt="logo-gifos" /></a>
       </div>
-      <nav class="menu">
+      <nav class="menu" aria-label="menuDesktop">
         <ul>
-          <li>Modo Nocturno</li>
-          <li><a href="/favoritos.html" id="favoritos">Favoritos</a></li>
-          <li><a href="/mis-gifos.html" id="mis-gifos">Mis Gifos</a></li>
+          <li class="nightMode">Modo Nocturno</li>
+          <li><a href="/favoritos.html">Favoritos</a></li>
+          <li><a href="/mis-gifos.html">Mis Gifos</a></li>
         </ul>
       </nav>
       <div class="crear">
-        <a href="/crear-gifos.html" id="crear-gifos"
-          ><img src="/assets/CTA-crear-gifo-active.svg" alt="icono-crear"
-        /></a>
+        <a href="/crear-gifos.html" id="crear-gifos">
+          <img src="/assets/button-crear.svg" alt="icono-crear" />
+        </a>
       </div>
+      <div class="menuMobile"></div>
+      <nav id="menuList" aria-label="menuDesktop">
+        <ul>
+          <li class="nightMode">
+            Modo Nocturno
+            <hr />
+          </li>
+          <li>
+            <a href="/favoritos.html">Favoritos</a>
+            <hr />
+          </li>
+          <li>
+            <a href="/mis-gifos.html">Mis Gifos</a>
+            <hr />
+          </li>
+        </ul>
+      </nav>
     </header>
+    <main>
+      <div id="cameraSection">
+        <div id="svgCamera"></div>
+        <div id="svgProjection"></div>
+        <div id="cameraContainer">
+          <div id="cameraBox">
+            <div id="corners">
+              <h1 class="titulo">
+                Aquí podrás <br />crear tus propios <span>GIFOS</span>
+              </h1>
+              <p id="textCreateGifo">
+                ¡Crea tu GIFO en sólo 3 pasos! <br />
+                (sólo necesitas una cámara para grabar un video)
+              </p>
+              <div id="cornerTopRight" class="corners"></div>
+              <div id="cornerTopLeft" class="corners"></div>
+              <div id="cornerBottomRight" class="corners"></div>
+              <div id="cornerBottomLeft" class="corners"></div>
+            </div>
+            <video id="createGifos"></video>
+          </div>
+          <div id="steps">
+            <span id="step1" class="steps">1</span>
+            <span id="step2" class="steps">2</span>
+            <span id="step3" class="steps">3</span>
+          </div>
+        </div>
+        <div id="movie">
+          <div id="svgMovie"></div>
+        </div>
+      </div>
+      <div id="cameraButtonSection">
+        <div id="divider"></div>
+        <div id="buttonCreateGifo"></div>
+        <div id="buttonRecordGifo" class="dn"></div>
+        <div id="buttonStopGifo" class="dn"></div>
+      </div>
+    </main>
     <footer>
       <div id="social">
         <p>Compartir en:</p>
@@ -39,5 +94,6 @@
         <p>© GIFOS 2020 All Rights Reserved.</p>
       </div>
     </footer>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
