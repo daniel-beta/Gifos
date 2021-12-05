@@ -63,8 +63,20 @@
               <div id="cornerBottomLeft" class="corners"></div>
             </div>
             <video id="createGifos"></video>
+            <img id="gifoRecord" class="dn" src="" alt="gif guardado" />
+            <div id="bgGifo" class="dn"></div>
+            <div id="upload" class="dn">
+              <div id="loader" class="dn"></div>
+              <div id="uploading" class="dn">Estamos subiendo tu GIFO</div>
+              <div id="actions" class="dn">
+                <div class="download icon dn"></div>
+                <div class="share icon dn"></div>
+              </div>
+            </div>
           </div>
           <div id="steps">
+            <span id="timerGifo" class="dn">00:00:00</span>
+            <span id="repeatGifo" class="dn">REPETIR CAPTURA</span>
             <span id="step1" class="steps">1</span>
             <span id="step2" class="steps">2</span>
             <span id="step3" class="steps">3</span>
@@ -79,6 +91,7 @@
         <div id="buttonCreateGifo"></div>
         <div id="buttonRecordGifo" class="dn"></div>
         <div id="buttonStopGifo" class="dn"></div>
+        <div id="buttonUpload" class="dn"></div>
       </div>
     </main>
     <footer>
@@ -94,6 +107,7 @@
         <p>© GIFOS 2020 All Rights Reserved.</p>
       </div>
     </footer>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
