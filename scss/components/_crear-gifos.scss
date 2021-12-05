@@ -1,6 +1,12 @@
 @import "datos.scss";
 
 body#createGifosPage {
+  header .crear a img {
+    content: url("/assets/CTA-crear-gifo-active.svg");
+    &:hover {
+      content: url("/assets/CTA-crear-gifo-hover.svg");
+    }
+  }
   main {
     height: 82vh;
     #cameraSection {
@@ -75,6 +81,7 @@ body#createGifosPage {
               margin-bottom: 10px;
             }
             p {
+              font-family: "Roboto";
               font-size: 16px;
               text-align: center;
               line-height: 29px;
@@ -84,9 +91,87 @@ body#createGifosPage {
           video {
             position: absolute;
           }
+          #gifoRecord {
+            position: absolute;
+          }
+          #bgGifo {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            background-color: $morado;
+            opacity: 0.6;
+          }
+          #upload {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            #loader {
+              content: url("/assets/loader.svg");
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+              /* Safari */
+              @-webkit-keyframes spin {
+                0% {
+                  -webkit-transform: rotate(0deg);
+                }
+                100% {
+                  -webkit-transform: rotate(360deg);
+                }
+              }
+
+              @keyframes spin {
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
+              &.ok {
+                content: url("/assets/ok.svg");
+                animation: none;
+              }
+            }
+            #uploading {
+              font-size: 15px;
+              font-weight: 500;
+              color: white;
+              opacity: 1;
+            }
+            #actions {
+              position: absolute;
+              display: flex;
+              gap: 15px;
+              right: 0;
+              top: 0;
+              margin-top: 15px;
+              margin-right: 15px;
+              .icon {
+                cursor: pointer;
+                &.download {
+                  content: url("/assets/icon-download.svg");
+                  &:hover {
+                    content: url("/assets/icon-download-hover.svg");
+                  }
+                }
+                &.share {
+                  content: url("/assets/icon-link-normal.svg");
+                  &:hover {
+                    content: url("/assets/icon-link-hover.svg");
+                  }
+                }
+              }
+            }
+          }
         }
         #steps {
           display: flex;
+          position: relative;
           justify-content: center;
           align-items: center;
           gap: 10px;
@@ -106,6 +191,21 @@ body#createGifosPage {
               background-color: $morado;
               color: white;
             }
+          }
+          #timerGifo,
+          #repeatGifo {
+            position: absolute;
+            right: 0;
+            color: $morado;
+            font-size: 15px;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 22px;
+            font-weight: 600;
+          }
+          #repeatGifo {
+            border-bottom: 2px solid $celeste;
+            cursor: pointer;
           }
         }
       }
@@ -137,6 +237,12 @@ body#createGifosPage {
       }
       #buttonStopGifo {
         content: url("/assets/CTA-stop.svg");
+        width: 127px;
+        margin: 20px;
+        cursor: pointer;
+      }
+      #buttonUpload {
+        content: url("/assets/CTA-upload.svg");
         width: 127px;
         margin: 20px;
         cursor: pointer;

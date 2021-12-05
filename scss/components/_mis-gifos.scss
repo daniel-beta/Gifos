@@ -1,22 +1,121 @@
 @import "datos.scss";
 
-body#mis-gifos-page {
-    header {
-        .menu {
-            #mis-gifos {
-                color: $azul-claro;
-            }
-        }
+body#misGifosPage {
+  header {
+    .menu {
+      #mis-gifos {
+        color: $azul-claro;
+      }
     }
-    main {
-        #icono-titulo,
-        #contenedor-vacio {
+  }
+  main {
+    #icono-titulo,
+    #emptyContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #emptyContainer {
+      margin: 80px 0;
+      &.dn {
+        display: none;
+      }
+    }
+    #myGifosContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1400px;
+      margin: 40px 0;
+      gap: 29px;
+      .gifoCardsLike {
+        display: flex;
+        height: 275px;
+        justify-content: center;
+        max-height: 200px;
+        max-width: 260px;
+        overflow: hidden;
+        width: 375px;
+        img {
+          height: 200px;
+          width: 260px;
+          object-fit: cover;
+        }
+        .gifoInfo {
+          display: none;
+          position: absolute;
+          height: 200px;
+          width: 260px;
+          .actions {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: flex-end;
+            .icon {
+              width: 32px;
+              height: 32px;
+              margin: 20px 20px 0 0;
+              cursor: pointer;
+              &.delete {
+                content: url("/assets/icon-trash-normal.svg");
+                &:hover {
+                  content: url("/assets/icon-trash-hover.svg");
+                }
+              }
+              &.like {
+                content: url("/assets/icon-like-active.svg");
+                &:hover {
+                  content: url("/assets/icon-fav-hover.svg");
+                }
+              }
+              &.download {
+                content: url("/assets/icon-download.svg");
+                &:hover {
+                  content: url("/assets/icon-download-hover.svg");
+                }
+              }
+              &.expand {
+                content: url("/assets/icon-max-normal.svg");
+                &:hover {
+                  content: url("/assets/icon-max-hover.svg");
+                }
+              }
+            }
+          }
+          &:hover .gifoInfo {
+            display: block;
+            background-color: rgba(87, 46, 229, 0.5);
+          }
+          .titles {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            p {
+              color: white;
+              &.user {
+                font-size: 15px;
+                margin-bottom: 6px;
+              }
+              &.title {
+                margin-top: 0;
+                font-size: 18px;
+                font-weight: bold;
+              }
+            }
+            .actions .icon {
+              margin: 15px 10px 0 0;
+            }
+          }
         }
-        #contenedor-vacio {
-            margin: 80px 0;
+        &:hover .gifoInfo {
+          display: block;
+          background-color: rgba(87, 46, 229, 0.5);
         }
+      }
     }
+    #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.like {
+      display: none;
+    }
+    #trendingGifos #sliderTrending #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.delete {
+      display: none;
+    }
+  }
 }

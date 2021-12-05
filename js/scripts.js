@@ -178,14 +178,16 @@ const search = (word) => {
 /* CREATE CARD */
 
 const createCard = (gifoId, imgUrlGif, titleGif, usernameGif, where) => {
+  const iconLike = `<div class="id${gifoId} like icon" onclick="like('${gifoId}','${titleGif}','${usernameGif}','${imgUrlGif}')"></div>`
+  const iconDelete = `<div class="id${gifoId} delete icon" onclick="deleteGifo('${gifoId}')"></div>`
   where.innerHTML =
     `<img
     src="${imgUrlGif}"
     alt="${titleGif}"
   />
   <div class="gifoInfo">
-    <div class="actions">
-      <div class="id${gifoId} like icon" onclick="like('${gifoId}','${titleGif}','${usernameGif}','${imgUrlGif}')"></div>
+    <div class="actions"> 
+      ${document.querySelector('#misGifosPage') ?  iconLike + iconDelete : iconLike}
       <div class="download icon" onclick="download('${imgUrlGif}', '${titleGif}')"></div>
       <div class="expand icon" onclick="expand('${gifoId}','${imgUrlGif}', '${titleGif}', '${usernameGif}')"></div>
     </div>
@@ -371,17 +373,18 @@ const addLike = gifoLike => {
   domLikes();
 }
 
-const removeLike = (gifoID) => {
+const removeLike = (gifoId) => {
   const likeSection = JSON.parse(localStorage.getItem('gif')) || [];
   let likeIndex;
   likeSection.forEach((gifoInfo, index) => {
-    if (gifoInfo.id === gifoID) {
+    if (gifoInfo.id === gifoId) {
       likeIndex = index;
     }
   });
   likeSection.splice(likeIndex, 1);
   localStorage.setItem('gif', JSON.stringify(likeSection));
   domLikes();
+  document.querySelector(`.id${gifoId}`).classList.remove('active');
 };
 
 const emptyContainer = document.querySelector('#emptyContainer');
@@ -441,12 +444,20 @@ const titleCreateGifo = document.querySelector('.titulo')
 const textCreateGifo = document.querySelector('#textCreateGifo')
 const buttonRecordGifo = document.querySelector('#buttonRecordGifo')
 const buttonStopGifo = document.querySelector('#buttonStopGifo')
+const timerGifo = document.querySelector('#timerGifo')
+const repeatGifo = document.querySelector('#repeatGifo')
+const buttonUpload = document.querySelector('#buttonUpload')
+const gifoRecord = document.querySelector('#gifoRecord')
 let recorder
+let form = new FormData();
+let blobUpload
 
 const createGifo = () => {
   buttonCreateGifo.addEventListener('click', () => {
     getStreamAndRecord()
     startCreateGifo()
+    stopCreateGifo()
+    uploadGifo()
   })
 }
 
@@ -468,11 +479,12 @@ const getStreamAndRecord = () => {
       document.querySelector('#step1').classList.remove('active')
       document.querySelector('#step2').classList.add('active')
 
-      recorder = recorder(stream, {
+      recorder = RecordRTC(stream, {
         type: 'gif',
         frameRate: 1,
         quality: 10,
-        width: 360,
+        width: 400,
+        height: 300,
         hidden: 240,
         onGifRecordingStarted: function () {
           console.log('started')
@@ -488,8 +500,180 @@ const startCreateGifo = () => {
   buttonRecordGifo.addEventListener('click', () => {
     buttonRecordGifo.classList.add('dn')
     buttonStopGifo.classList.remove('dn')
-    /* recorder.startRecording(); */
+    timerFunction()
+    recorder.startRecording();
   })
+}
+
+const repeatCaptureGifo = () => {
+  buttonUpload.classList.remove('dn')
+  repeatGifo.classList.add('dn')
+  video.classList.remove('dn');
+  gifoRecord.classList.add('dn')
+  timerGifo.classList.remove('dn')
+  buttonUpload.classList.add('dn')
+  buttonRecordGifo.classList.remove('dn')
+  getStreamAndRecord()
+}
+
+const stopCreateGifo = () => {
+  buttonStopGifo.addEventListener('click', () => {
+    recorder.stopRecording(() => {
+      video.classList.add('dn');
+      gifoRecord.classList.remove('dn');
+      blobUpload = recorder.getBlob();
+      gifoRecord.src = URL.createObjectURL(blobUpload);
+      form.append('file', recorder.getBlob(), 'myGif.gif');
+      console.log(form.get('file'))
+    });
+    clearInterval(timer);
+    hours = '00';
+    minutes = '00';
+    seconds = '00';
+    timerGifo.innerText = `${hours}:${minutes}:${seconds}`;
+    timerGifo.classList.add('dn')
+    repeatGifo.classList.remove('dn')
+    repeatGifo.addEventListener('click', () => {
+      repeatCaptureGifo()
+    })
+    buttonStopGifo.classList.add('dn')
+    buttonUpload.classList.remove('dn')
+  })
+}
+
+let timer
+let hours = '00';
+let minutes = '00';
+let seconds = '00';
+
+const timerFunction = () => {
+  timerGifo.classList.remove('dn')
+  timer = setInterval(timeRecord, 1000);
+}
+
+const timeRecord = () => {
+  seconds++;
+  if (seconds < 10) seconds = `0` + seconds;
+  if (seconds > 59) {
+    seconds = `00`;
+    minutes++;
+    if (minutes < 10) minutes = `0` + minutes;
+  }
+  if (minutes > 59) {
+    minutes = `00`;
+    hours++;
+    if (hours < 10) hours = `0` + hours;
+  }
+  timerGifo.innerHTML = `${hours}:${minutes}:${seconds}`;
+}
+
+const uploadGifo = () => {
+  buttonUpload.addEventListener('click', () => {
+    document.querySelector('#step2').classList.remove('active')
+    document.querySelector('#step3').classList.add('active')
+    repeatGifo.classList.add('dn')
+    document.querySelector('#bgGifo').classList.remove('dn')
+    document.querySelector('#upload').classList.remove('dn')
+    document.querySelector('#loader').classList.remove('dn')
+    document.querySelector('#uploading').classList.remove('dn')
+    uploadFile()
+    console.log("click UPLOAD")
+  })
+}
+
+const uploadFile = () => {
+  fetch(`${uploadUrl}gifs?api_key=${apiKey}`, {
+    method: 'POST',
+    body: form,
+  })
+    .then(resp => resp.json())
+    .then(gifos => {
+      const myGif = JSON.parse(localStorage.getItem('misGifos')) || [];
+      myGif.push(gifos);
+      localStorage.setItem('misGifos', JSON.stringify(myGif));
+      document.querySelector('#loader').classList.add('ok')
+      document.querySelector('#uploading').innerHTML = "GIFO subido con éxito"
+      const gifoShare = gifos.data.id;
+      document.querySelector('.download').classList.remove('dn')
+      document.querySelector('.share').classList.remove('dn')
+      document.querySelector('.share').addEventListener('click', () => {
+        window.open(`https://media.giphy.com/media/${gifoShare}/giphy.gif?_blank`);
+      });
+      document.querySelector('.download').classList.remove('none');
+      document.querySelector('.download').addEventListener('click', () => {
+        downloadGifo(gifoShare);
+      });
+    }).catch(e => console.log(e));
+};
+
+const downloadGifo = (gifoIdDownload) => {
+  const urlMyGif = `${giphyUrl}gifs/${gifoIdDownload}?api_key=${apiKey}`;
+  console.log(urlMyGif)
+  let result = getApi(urlMyGif);
+  result.then((resp) => {
+    download(resp.data.images.original.url);
+  }).catch((e) => {
+    alert("Error: " + e);
+  });
+};
+
+/* MIS GIFOS */
+
+const getId = () => {
+  const myGif = JSON.parse(localStorage.getItem('misGifos')) || [];
+  myGif.map(id => {
+    getGifoId(id.data.id)
+  });
+}
+
+const getGifoId = (gifoId) => {
+  const urlMyGifLocal = `${giphyUrl}gifs/${gifoId}?api_key=${apiKey}`;
+  let result = getApi(urlMyGifLocal);
+  result.then((resp) => {
+    domMyGifos(resp.data)
+  }).catch((e) => {
+    console.log("Error: " + e);
+  });
+};
+
+const myGifosContainer = document.querySelector('#myGifosContainer');
+
+const domMyGifos = (data) => {
+  if (document.querySelector('#misGifosPage')) {
+    const gifosLs = JSON.parse(localStorage.getItem('misGifos')) || [];
+    if (gifosLs.length !== 0) {
+      emptyContainer.classList.add('dn');
+      const gifoCardsLike = document.createElement('div');
+      gifoCardsLike.classList.add('gifoCardsLike');
+      createCard(data.id, data.images.original.url, data.title, data.username, gifoCardsLike)
+      myGifosContainer.appendChild(gifoCardsLike)
+    } else {
+      emptyContainer.classList.remove('dn');
+      myGifosContainer.innerHTML = '';
+    }
+  }
+}
+
+/* const removeGifo = gifoId => {
+  deleteGifo(gifoId);
+    searchGifoFlex.removeChild(divContainerMyGifos);
+    if (searchGifoFlex.innerHTML === '') {
+        no_favorites.classList.remove('none');
+    }else{
+        no_favorites.classList.add('none');
+    }
+} */
+
+const deleteGifo = gifo => {
+  const myGifo = JSON.parse(localStorage.getItem('misGifos')) || [];
+  let index;
+  myGifo.map((gifDelete, i) => {
+    if (gifDelete.id === gifo) {
+      index = i;
+    }
+  });
+  myGifo.splice(index, 1);
+  localStorage.setItem('misGifos', JSON.stringify(myGifo));
 }
 
 /* FUNCTIONS */
@@ -504,6 +688,10 @@ if (document.querySelector('#home')) {
 
 if (document.querySelector('#likesPage')) {
   domLikes();
+}
+
+if (document.querySelector('#misGifosPage')) {
+  getId();
 }
 
 if (!document.querySelector('#createGifosPage')) {
