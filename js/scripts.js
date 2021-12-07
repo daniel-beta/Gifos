@@ -179,15 +179,16 @@ const search = (word) => {
 
 const createCard = (gifoId, imgUrlGif, titleGif, usernameGif, where) => {
   const iconLike = `<div class="id${gifoId} like icon" onclick="like('${gifoId}','${titleGif}','${usernameGif}','${imgUrlGif}')"></div>`
-  const iconDelete = `<div class="id${gifoId} delete icon" onclick="deleteGifo('${gifoId}')"></div>`
+  const iconDelete = `<div class="id${gifoId} delete icon" onclick="removeGifo('${gifoId}')"></div>`
   where.innerHTML =
     `<img
     src="${imgUrlGif}"
     alt="${titleGif}"
+    onclick="expand('${gifoId}','${imgUrlGif}', '${titleGif}', '${usernameGif}')"
   />
   <div class="gifoInfo">
     <div class="actions"> 
-      ${document.querySelector('#misGifosPage') ?  iconLike + iconDelete : iconLike}
+      ${document.querySelector('#misGifosPage') ? iconLike + iconDelete : iconLike}
       <div class="download icon" onclick="download('${imgUrlGif}', '${titleGif}')"></div>
       <div class="expand icon" onclick="expand('${gifoId}','${imgUrlGif}', '${titleGif}', '${usernameGif}')"></div>
     </div>
@@ -576,8 +577,8 @@ const uploadGifo = () => {
     document.querySelector('#upload').classList.remove('dn')
     document.querySelector('#loader').classList.remove('dn')
     document.querySelector('#uploading').classList.remove('dn')
+    buttonUpload.classList.add('dn')
     uploadFile()
-    console.log("click UPLOAD")
   })
 }
 
@@ -645,6 +646,7 @@ const domMyGifos = (data) => {
       emptyContainer.classList.add('dn');
       const gifoCardsLike = document.createElement('div');
       gifoCardsLike.classList.add('gifoCardsLike');
+      gifoCardsLike.setAttribute('id', `id${data.id}`)
       createCard(data.id, data.images.original.url, data.title, data.username, gifoCardsLike)
       myGifosContainer.appendChild(gifoCardsLike)
     } else {
@@ -654,15 +656,15 @@ const domMyGifos = (data) => {
   }
 }
 
-/* const removeGifo = gifoId => {
+const removeGifo = gifoId => {
   deleteGifo(gifoId);
-    searchGifoFlex.removeChild(divContainerMyGifos);
-    if (searchGifoFlex.innerHTML === '') {
-        no_favorites.classList.remove('none');
-    }else{
-        no_favorites.classList.add('none');
-    }
-} */
+  myGifosContainer.removeChild(document.querySelector(`#id${gifoId}`));
+  if (myGifosContainer.innerHTML === '') {
+    emptyContainer.classList.remove('dn');
+  } else {
+    emptyContainer.classList.add('dn');
+  }
+}
 
 const deleteGifo = gifo => {
   const myGifo = JSON.parse(localStorage.getItem('misGifos')) || [];
@@ -674,6 +676,17 @@ const deleteGifo = gifo => {
   });
   myGifo.splice(index, 1);
   localStorage.setItem('misGifos', JSON.stringify(myGifo));
+}
+
+/* MOBILE */
+
+const isMobile = gifoId => {
+  const gifo = document.querySelector(`#id${gifoId}`)
+  if (screen.width < 1024) {
+    gifo.addEventListener('click', () => {
+      console.log('Click en el gifo', gifoId)
+    })
+  }
 }
 
 /* FUNCTIONS */

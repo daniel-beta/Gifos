@@ -462,6 +462,11 @@ body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
   background-color: rgba(87, 46, 229, 0.5);
 }
 
+@media (max-width: 640px) {
+  body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
+    display: none;
+  }
+}
 /* Colores */
 body#misGifosPage header .menu #mis-gifos {
   color: #9cafc3;
