@@ -107,3 +107,9 @@ body#likesPage {
     }
   }
 }
+
+@media (max-width: 640px) {
+  body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
+    display: none;
+  }
+}
