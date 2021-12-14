@@ -49,7 +49,7 @@ header {
     display: flex;
     align-items: center;
     a img:hover {
-      content: url("/assets/CTA-crear-gifo-hover.svg");
+      content: url("../assets/CTA-crear-gifo-hover.svg");
     }
   }
   .menuMobile {
@@ -90,7 +90,7 @@ header {
     }
     .menuMobile {
       display: block;
-      content: url("/assets/burger.svg");
+      content: url("../assets/burger.svg");
       background-repeat: no-repeat;
       background-position: center;
       width: 20px;

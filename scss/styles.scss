@@ -52,24 +52,24 @@ body {
           height: 32px;
           cursor: pointer;
           &.like {
-            content: url("/assets/icon-fav.svg");
+            content: url("../assets/icon-fav.svg");
             &:hover {
-              content: url("/assets/icon-fav-hover.svg");
+              content: url("../assets/icon-fav-hover.svg");
             }
             &.active {
-              content: url("/assets/icon-like-active.svg");
+              content: url("../assets/icon-like-active.svg");
             }
           }
           &.download {
-            content: url("/assets/icon-download.svg");
+            content: url("../assets/icon-download.svg");
             &:hover {
-              content: url("/assets/icon-download-hover.svg");
+              content: url("../assets/icon-download-hover.svg");
             }
           }
           &.expand {
-            content: url("/assets/icon-max-normal.svg");
+            content: url("../assets/icon-max-normal.svg");
             &:hover {
-              content: url("/assets/icon-max-hover.svg");
+              content: url("../assets/icon-max-hover.svg");
             }
           }
         }
@@ -143,16 +143,16 @@ body {
           cursor: pointer;
           &#arrowRight {
             right: 0;
-            content: url("/assets/Button-Slider-right.svg");
+            content: url("../assets/Button-Slider-right.svg");
             &:hover {
-              content: url("/assets/Button-Slider-right-hover.svg");
+              content: url("../assets/Button-Slider-right-hover.svg");
             }
           }
           &#arrowLeft {
             left: 0;
-            content: url("/assets/Button-Slider-left.svg");
+            content: url("../assets/Button-Slider-left.svg");
             &:hover {
-              content: url("/assets/Button-Slider-left-hover.svg");
+              content: url("../assets/Button-Slider-left-hover.svg");
             }
           }
         }
@@ -211,7 +211,7 @@ body {
     }
     .showMore {
       position: relative;
-      background-image: url("/assets/CTA-ver-mas.svg");
+      background-image: url("../assets/CTA-ver-mas.svg");
       margin: auto;
       margin-bottom: 30px;
       top: 30px;
@@ -222,7 +222,7 @@ body {
       transition: all 0.3s ease;
     }
     .showMore:hover {
-      background-image: url("/assets/CTA-ver-mas-hover.svg");
+      background-image: url("../assets/CTA-ver-mas-hover.svg");
     }
   }
   #gifoTrendingSlider {
@@ -255,24 +255,24 @@ body {
             margin: 20px 20px 0 0;
             cursor: pointer;
             &.like {
-              content: url("/assets/icon-fav.svg");
+              content: url("../assets/icon-fav.svg");
               &:hover {
-                content: url("/assets/icon-fav-hover.svg");
+                content: url("../assets/icon-fav-hover.svg");
               }
               &.active {
-                content: url("/assets/icon-like-active.svg");
+                content: url("../assets/icon-like-active.svg");
               }
             }
             &.download {
-              content: url("/assets/icon-download.svg");
+              content: url("../assets/icon-download.svg");
               &:hover {
-                content: url("/assets/icon-download-hover.svg");
+                content: url("../assets/icon-download-hover.svg");
               }
             }
             &.expand {
-              content: url("/assets/icon-max-normal.svg");
+              content: url("../assets/icon-max-normal.svg");
               &:hover {
-                content: url("/assets/icon-max-hover.svg");
+                content: url("../assets/icon-max-hover.svg");
               }
             }
           }
@@ -326,24 +326,24 @@ body {
             margin: 20px 20px 0 0;
             cursor: pointer;
             &.like {
-              content: url("/assets/icon-fav.svg");
+              content: url("../assets/icon-fav.svg");
               &:hover {
-                content: url("/assets/icon-fav-hover.svg");
+                content: url("../assets/icon-fav-hover.svg");
               }
               &.active {
-                content: url("/assets/icon-like-active.svg");
+                content: url("../assets/icon-like-active.svg");
               }
             }
             &.download {
-              content: url("/assets/icon-download.svg");
+              content: url("../assets/icon-download.svg");
               &:hover {
-                content: url("/assets/icon-download-hover.svg");
+                content: url("../assets/icon-download-hover.svg");
               }
             }
             &.expand {
-              content: url("/assets/icon-max-normal.svg");
+              content: url("../assets/icon-max-normal.svg");
               &:hover {
-                content: url("/assets/icon-max-hover.svg");
+                content: url("../assets/icon-max-hover.svg");
               }
             }
           }

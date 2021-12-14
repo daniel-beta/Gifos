@@ -71,7 +71,7 @@ header .crear {
   align-items: center;
 }
 header .crear a img:hover {
-  content: url("/assets/CTA-crear-gifo-hover.svg");
+  content: url("../assets/CTA-crear-gifo-hover.svg");
 }
 header .menuMobile {
   display: none;
@@ -108,7 +108,7 @@ header .crear {
   }
   header .menuMobile {
     display: block;
-    content: url("/assets/burger.svg");
+    content: url("../assets/burger.svg");
     background-repeat: no-repeat;
     background-position: center;
     width: 20px;
@@ -457,22 +457,22 @@ body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon {
   cursor: pointer;
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.like {
-  content: url("/assets/icon-like-active.svg");
+  content: url("../assets/icon-like-active.svg");
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.like:hover {
-  content: url("/assets/icon-fav-hover.svg");
+  content: url("../assets/icon-fav-hover.svg");
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.download:hover {
-  content: url("/assets/icon-download-hover.svg");
+  content: url("../assets/icon-download-hover.svg");
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.expand {
-  content: url("/assets/icon-max-normal.svg");
+  content: url("../assets/icon-max-normal.svg");
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo .actions .icon.expand:hover {
-  content: url("/assets/icon-max-hover.svg");
+  content: url("../assets/icon-max-hover.svg");
 }
 body#likesPage main #likesContainer .gifoCardsLike .gifoInfo:hover .gifoInfo {
   display: block;
@@ -573,28 +573,28 @@ body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon
   cursor: pointer;
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.delete {
-  content: url("/assets/icon-trash-normal.svg");
+  content: url("../assets/icon-trash-normal.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.delete:hover {
-  content: url("/assets/icon-trash-hover.svg");
+  content: url("../assets/icon-trash-hover.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.like {
-  content: url("/assets/icon-like-active.svg");
+  content: url("../assets/icon-like-active.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.like:hover {
-  content: url("/assets/icon-fav-hover.svg");
+  content: url("../assets/icon-fav-hover.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.download:hover {
-  content: url("/assets/icon-download-hover.svg");
+  content: url("../assets/icon-download-hover.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.expand {
-  content: url("/assets/icon-max-normal.svg");
+  content: url("../assets/icon-max-normal.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo .actions .icon.expand:hover {
-  content: url("/assets/icon-max-hover.svg");
+  content: url("../assets/icon-max-hover.svg");
 }
 body#misGifosPage main #myGifosContainer .gifoCardsLike .gifoInfo:hover .gifoInfo {
   display: block;
@@ -648,13 +648,13 @@ body#misGifosPage main #trendingGifos #sliderTrending #gifoTrendingSlider .gifoT
 }
 /* Colores */
 body#createGifosPage header .crear a img {
-  content: url("/assets/CTA-crear-gifo-active.svg");
+  content: url("../assets/CTA-crear-gifo-active.svg");
 }
 body#createGifosPage header .crear a img:hover {
-  content: url("/assets/CTA-crear-gifo-hover.svg");
+  content: url("../assets/CTA-crear-gifo-hover.svg");
 }
 body#createGifosPage.dark header .crear a img:hover {
-  content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
+  content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
 }
 body#createGifosPage main {
   height: 82vh;
@@ -663,10 +663,10 @@ body#createGifosPage main #cameraSection {
   display: flex;
 }
 body#createGifosPage main #cameraSection #svgCamera {
-  content: url("/assets/camara.svg");
+  content: url("../assets/camara.svg");
 }
 body#createGifosPage main #cameraSection #svgProjection {
-  content: url("/assets/element-luz-camara.svg");
+  content: url("../assets/element-luz-camara.svg");
   margin-left: 4px;
   padding-top: 2px;
 }
@@ -675,7 +675,7 @@ body#createGifosPage main #cameraSection #movie {
   align-items: flex-end;
 }
 body#createGifosPage main #cameraSection #movie #svgMovie {
-  content: url("/assets/movie.svg");
+  content: url("../assets/movie.svg");
   margin-left: 20px;
 }
 body#createGifosPage main #cameraSection #cameraContainer {
@@ -765,7 +765,7 @@ body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload {
   gap: 15px;
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #loader {
-  content: url("/assets/loader.svg");
+  content: url("../assets/loader.svg");
   -webkit-animation: spin 2s linear infinite;
   /* Safari */
   animation: spin 2s linear infinite;
@@ -788,7 +788,7 @@ body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #lo
   }
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #loader.ok {
-  content: url("/assets/ok.svg");
+  content: url("../assets/ok.svg");
   animation: none;
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #uploading {
@@ -810,16 +810,16 @@ body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #ac
   cursor: pointer;
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #actions .icon.download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #actions .icon.download:hover {
-  content: url("/assets/icon-download-hover.svg");
+  content: url("../assets/icon-download-hover.svg");
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #actions .icon.share {
-  content: url("/assets/icon-link-normal.svg");
+  content: url("../assets/icon-link-normal.svg");
 }
 body#createGifosPage main #cameraSection #cameraContainer #cameraBox #upload #actions .icon.share:hover {
-  content: url("/assets/icon-link-hover.svg");
+  content: url("../assets/icon-link-hover.svg");
 }
 body#createGifosPage main #cameraSection #cameraContainer #steps {
   display: flex;
@@ -875,25 +875,25 @@ body#createGifosPage main #cameraButtonSection #divider {
   border-radius: 10px;
 }
 body#createGifosPage main #cameraButtonSection #buttonCreateGifo {
-  content: url("/assets/CTA-start.svg");
+  content: url("../assets/CTA-start.svg");
   width: 127px;
   margin: 20px;
   cursor: pointer;
 }
 body#createGifosPage main #cameraButtonSection #buttonRecordGifo {
-  content: url("/assets/CTA-record.svg");
+  content: url("../assets/CTA-record.svg");
   width: 127px;
   margin: 20px;
   cursor: pointer;
 }
 body#createGifosPage main #cameraButtonSection #buttonStopGifo {
-  content: url("/assets/CTA-stop.svg");
+  content: url("../assets/CTA-stop.svg");
   width: 127px;
   margin: 20px;
   cursor: pointer;
 }
 body#createGifosPage main #cameraButtonSection #buttonUpload {
-  content: url("/assets/CTA-upload.svg");
+  content: url("../assets/CTA-upload.svg");
   width: 127px;
   margin: 20px;
   cursor: pointer;
@@ -907,17 +907,17 @@ body.dark header {
   border-color: black;
 }
 body.dark header .logo a img {
-  content: url("/assets/logo-dark.svg");
+  content: url("../assets/logo-dark.svg");
 }
 body.dark header .menu ul li,
 body.dark header .menu ul a {
   color: white;
 }
 body.dark header .crear a img {
-  content: url("/assets/CTA-crear-gifo-modo-noc.svg");
+  content: url("../assets/CTA-crear-gifo-modo-noc.svg");
 }
 body.dark header .crear a img:hover {
-  content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
+  content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
 }
 body.dark#home main .titulo {
   color: white;
@@ -933,10 +933,10 @@ body.dark#home main #search #search-bar #suggestions .suggestion {
   color: #9cafc3;
 }
 body.dark#home main #search #search-bar .icon-search {
-  background-image: url("/assets/icon-search-modo-noct.svg");
+  background-image: url("../assets/icon-search-modo-noct.svg");
 }
 body.dark#home main #search #search-bar .icon-close {
-  background-image: url("/assets/close-modo-noct.svg");
+  background-image: url("../assets/close-modo-noct.svg");
 }
 body.dark#home main #trending h3,
 body.dark#home main #trending #trendingSearches span {
@@ -946,10 +946,10 @@ body.dark#home main #searchResult #titleResult {
   color: white;
 }
 body.dark#createGifosPage main #cameraSection #svgCamera {
-  content: url("/assets/camara-modo-noc.svg");
+  content: url("../assets/camara-modo-noc.svg");
 }
 body.dark#createGifosPage main #cameraSection #movie #svgMovie {
-  content: url("/assets/pelicula-modo-noc.svg");
+  content: url("../assets/pelicula-modo-noc.svg");
 }
 body.dark#createGifosPage main #cameraSection #cameraContainer #cameraBox {
   border-color: white;
@@ -978,16 +978,16 @@ body.dark#createGifosPage main #cameraButtonSection #divider {
   background-color: #222326;
 }
 body.dark#createGifosPage main #cameraButtonSection #buttonCreateGifo {
-  content: url("/assets/CTA-start-noct.svg");
+  content: url("../assets/CTA-start-noct.svg");
 }
 body.dark#createGifosPage main #cameraButtonSection #buttonRecordGifo {
-  content: url("/assets/CTA-record-noct.svg");
+  content: url("../assets/CTA-record-noct.svg");
 }
 body.dark#createGifosPage main #cameraButtonSection #buttonStopGifo {
-  content: url("/assets/CTA-stop-noct.svg");
+  content: url("../assets/CTA-stop-noct.svg");
 }
 body.dark#createGifosPage main #cameraButtonSection #buttonUpload {
-  content: url("/assets/CTA-upload-noct.svg");
+  content: url("../assets/CTA-upload-noct.svg");
 }
 body.dark main #trendingGifos {
   background-color: #222326;
@@ -996,25 +996,25 @@ body.dark main #trendingGifos p {
   color: white;
 }
 body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft {
-  content: url("/assets/button-slider-left-md-noct.svg");
+  content: url("../assets/button-slider-left-md-noct.svg");
 }
 body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft:hover {
-  content: url("/assets/button-slider-left-md-noct_hover.svg");
+  content: url("../assets/button-slider-left-md-noct_hover.svg");
 }
 body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowRight {
-  content: url("/assets/button-slider-right-md-noct.svg");
+  content: url("../assets/button-slider-right-md-noct.svg");
 }
 body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowRight:hover {
-  content: url("/assets/button-slider-right-md-noct-hover.svg");
+  content: url("../assets/button-slider-right-md-noct-hover.svg");
 }
 body.dark main h2.subtitulo {
   color: white;
 }
 body.dark main #searchResult .showMore {
-  background-image: url("/assets/CTA-ver+-modo-noc.svg");
+  background-image: url("../assets/CTA-ver+-modo-noc.svg");
 }
 body.dark main #searchResult .showMore:hover {
-  background-image: url("/assets/CTA-ver+hover-modo-noc.svg");
+  background-image: url("../assets/CTA-ver+hover-modo-noc.svg");
 }
 body.dark footer {
   border-color: black;
@@ -1027,7 +1027,7 @@ body.dark #expandContainer #expandBackground {
   background-color: #37383C;
 }
 body.dark #expandContainer #expandContent #expandCloseIcon {
-  background-image: url("/assets/close-modo-noct.svg");
+  background-image: url("../assets/close-modo-noct.svg");
 }
 body.dark #expandContainer #expandContent #nameGif {
   color: white;
@@ -1039,7 +1039,7 @@ body.dark #expandContainer #expandContent #nameGif {
     background-color: #37383C;
   }
   body.dark header .menuMobile {
-    content: url("/assets/burger-modo-noct.svg");
+    content: url("../assets/burger-modo-noct.svg");
   }
   body.dark header #menuList.open {
     background-color: black;
@@ -1096,25 +1096,25 @@ body #expandContainer #expandContent #gifDetails .icon {
   cursor: pointer;
 }
 body #expandContainer #expandContent #gifDetails .icon.like {
-  content: url("/assets/icon-fav.svg");
+  content: url("../assets/icon-fav.svg");
 }
 body #expandContainer #expandContent #gifDetails .icon.like:hover {
-  content: url("/assets/icon-fav-hover.svg");
+  content: url("../assets/icon-fav-hover.svg");
 }
 body #expandContainer #expandContent #gifDetails .icon.like.active {
-  content: url("/assets/icon-like-active.svg");
+  content: url("../assets/icon-like-active.svg");
 }
 body #expandContainer #expandContent #gifDetails .icon.download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
 }
 body #expandContainer #expandContent #gifDetails .icon.download:hover {
-  content: url("/assets/icon-download-hover.svg");
+  content: url("../assets/icon-download-hover.svg");
 }
 body #expandContainer #expandContent #gifDetails .icon.expand {
-  content: url("/assets/icon-max-normal.svg");
+  content: url("../assets/icon-max-normal.svg");
 }
 body #expandContainer #expandContent #gifDetails .icon.expand:hover {
-  content: url("/assets/icon-max-hover.svg");
+  content: url("../assets/icon-max-hover.svg");
 }
 body #expandContainer #expandContent #usernameGif {
   font-size: 14px;
@@ -1187,17 +1187,17 @@ body main #trendingGifos #sliderTrending .arrowsSlider {
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowRight {
   right: 0;
-  content: url("/assets/Button-Slider-right.svg");
+  content: url("../assets/Button-Slider-right.svg");
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowRight:hover {
-  content: url("/assets/Button-Slider-right-hover.svg");
+  content: url("../assets/Button-Slider-right-hover.svg");
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft {
   left: 0;
-  content: url("/assets/Button-Slider-left.svg");
+  content: url("../assets/Button-Slider-left.svg");
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft:hover {
-  content: url("/assets/Button-Slider-left-hover.svg");
+  content: url("../assets/Button-Slider-left-hover.svg");
 }
 body #searchResult {
   display: flex;
@@ -1252,7 +1252,7 @@ body #searchResult #notFound.dn {
 }
 body #searchResult .showMore {
   position: relative;
-  background-image: url("/assets/CTA-ver-mas.svg");
+  background-image: url("../assets/CTA-ver-mas.svg");
   margin: auto;
   margin-bottom: 30px;
   top: 30px;
@@ -1263,7 +1263,7 @@ body #searchResult .showMore {
   transition: all 0.3s ease;
 }
 body #searchResult .showMore:hover {
-  background-image: url("/assets/CTA-ver-mas-hover.svg");
+  background-image: url("../assets/CTA-ver-mas-hover.svg");
 }
 body #gifoTrendingSlider {
   display: flex;
@@ -1300,25 +1300,25 @@ body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon {
   cursor: pointer;
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like {
-  content: url("/assets/icon-fav.svg");
+  content: url("../assets/icon-fav.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like:hover {
-  content: url("/assets/icon-fav-hover.svg");
+  content: url("../assets/icon-fav-hover.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.like.active {
-  content: url("/assets/icon-like-active.svg");
+  content: url("../assets/icon-like-active.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.download:hover {
-  content: url("/assets/icon-download-hover.svg");
+  content: url("../assets/icon-download-hover.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.expand {
-  content: url("/assets/icon-max-normal.svg");
+  content: url("../assets/icon-max-normal.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.expand:hover {
-  content: url("/assets/icon-max-hover.svg");
+  content: url("../assets/icon-max-hover.svg");
 }
 body #gifoTrendingSlider .gifoTrending .gifoInfo .titles {
   position: absolute;
@@ -1369,25 +1369,25 @@ body #gifosResult .gifoTrending .gifoInfo .actions .icon {
   cursor: pointer;
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.like {
-  content: url("/assets/icon-fav.svg");
+  content: url("../assets/icon-fav.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.like:hover {
-  content: url("/assets/icon-fav-hover.svg");
+  content: url("../assets/icon-fav-hover.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.like.active {
-  content: url("/assets/icon-like-active.svg");
+  content: url("../assets/icon-like-active.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.download:hover {
-  content: url("/assets/icon-download-hover.svg");
+  content: url("../assets/icon-download-hover.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.expand {
-  content: url("/assets/icon-max-normal.svg");
+  content: url("../assets/icon-max-normal.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .actions .icon.expand:hover {
-  content: url("/assets/icon-max-hover.svg");
+  content: url("../assets/icon-max-hover.svg");
 }
 body #gifosResult .gifoTrending .gifoInfo .titles {
   position: absolute;
