@@ -115,6 +115,12 @@ header .crear {
     height: 20px;
     margin: 20px;
   }
+  header .menuMobile.openIcon {
+    content: url("../assets/close.svg");
+    background-position: center;
+    width: 18px;
+    height: 18px;
+  }
   header #menuList {
     display: none;
   }
@@ -147,7 +153,8 @@ header .crear {
     margin-top: 12px;
     margin-bottom: 0;
   }
-  header #menuList.open ul li, header #menuList.open ul a {
+  header #menuList.open ul li,
+header #menuList.open ul a {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -194,25 +201,25 @@ footer #social #redes-sociales a {
   margin-left: 15px;
 }
 footer #social #redes-sociales a#facebook {
-  background-image: url(/assets/icon_facebook.svg);
+  background-image: url(../assets/icon_facebook.svg);
   background-repeat: no-repeat;
 }
 footer #social #redes-sociales a#facebook:hover {
-  background-image: url(/assets/icon_facebook_hover.svg);
+  background-image: url(../assets/icon_facebook_hover.svg);
 }
 footer #social #redes-sociales a#instagram {
-  background-image: url(/assets/icon_instagram.svg);
+  background-image: url(../assets/icon_instagram.svg);
   background-repeat: no-repeat;
 }
 footer #social #redes-sociales a#instagram:hover {
-  background-image: url(/assets/icon_instagram-hover.svg);
+  background-image: url(../assets/icon_instagram-hover.svg);
 }
 footer #social #redes-sociales a#twitter {
-  background-image: url(/assets/icon-twitter.svg);
+  background-image: url(../assets/icon-twitter.svg);
   background-repeat: no-repeat;
 }
 footer #social #redes-sociales a#twitter:hover {
-  background-image: url(/assets/icon-twitter-hover.svg);
+  background-image: url(../assets/icon-twitter-hover.svg);
 }
 footer #social p {
   display: flex;
@@ -289,15 +296,15 @@ body#home main #search #search-bar div[class^=icon] {
   cursor: pointer;
 }
 body#home main #search #search-bar .icon-search {
-  background-image: url(/assets/icon-search.svg);
+  background-image: url(../assets/icon-search.svg);
 }
 body#home main #search #search-bar .icon-close {
-  background-image: url(/assets/close.svg);
+  background-image: url(../assets/close.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 body#home main #search #search-bar .icon-search-gray {
-  background-image: url(/assets/icon-search-gray.svg);
+  background-image: url(../assets/icon-search-gray.svg);
   left: 4%;
 }
 body#home main #search #search-bar #suggestions .suggestion {
@@ -1041,6 +1048,12 @@ body.dark #expandContainer #expandContent #nameGif {
   body.dark header .menuMobile {
     content: url("../assets/burger-modo-noct.svg");
   }
+  body.dark header .menuMobile.openIcon {
+    content: url("../assets/close-modo-noct.svg");
+    background-position: center;
+    width: 18px;
+    height: 18px;
+  }
   body.dark header #menuList.open {
     background-color: black;
     opacity: 1;
@@ -1074,7 +1087,7 @@ body #expandContainer #expandContent {
   justify-content: center;
 }
 body #expandContainer #expandContent #expandCloseIcon {
-  background-image: url(/assets/close.svg);
+  background-image: url(../assets/close.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -1194,10 +1207,10 @@ body main #trendingGifos #sliderTrending .arrowsSlider#arrowRight:hover {
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft {
   left: 0;
-  content: url("../assets/Button-Slider-left.svg");
+  content: url("../assets/button-slider-left.svg");
 }
 body main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft:hover {
-  content: url("../assets/Button-Slider-left-hover.svg");
+  content: url("../assets/button-slider-left-hover.svg");
 }
 body #searchResult {
   display: flex;

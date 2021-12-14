@@ -431,9 +431,11 @@ const menuMobile = () => {
     e.preventDefault()
     if (menuList.classList.contains("open")) {
       menuList.classList.remove("open")
+      iconMenuMobile.classList.remove("openIcon")
       header[0].classList.remove("open")
     } else {
       menuList.classList.add("open")
+      iconMenuMobile.classList.add("openIcon")
       header[0].classList.add("open")
     }
   })
