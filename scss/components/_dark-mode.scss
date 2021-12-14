@@ -166,6 +166,12 @@ body.dark {
       background-color: $black-onyx;
       .menuMobile {
         content: url("../assets/burger-modo-noct.svg");
+        &.openIcon {
+          content: url("../assets/close-modo-noct.svg");
+          background-position: center;
+          width: 18px;
+          height: 18px;
+        }
       }
       #menuList.open {
         background-color: black;
