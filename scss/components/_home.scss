@@ -33,15 +33,15 @@ body#home {
           cursor: pointer;
         }
         .icon-search {
-          background-image: url(/assets/icon-search.svg);
+          background-image: url(../assets/icon-search.svg);
         }
         .icon-close {
-          background-image: url(/assets/close.svg);
+          background-image: url(../assets/close.svg);
           background-repeat: no-repeat;
           background-position: center;
         }
         .icon-search-gray {
-          background-image: url(/assets/icon-search-gray.svg);
+          background-image: url(../assets/icon-search-gray.svg);
           left: 4%;
         }
         #suggestions {

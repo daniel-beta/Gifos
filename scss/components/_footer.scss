@@ -15,24 +15,24 @@ footer {
                 height: 18px;
                 margin-left: 15px;
                 &#facebook {
-                    background-image: url(/assets/icon_facebook.svg);
+                    background-image: url(../assets/icon_facebook.svg);
                     background-repeat: no-repeat;
                     &:hover {
-                        background-image: url(/assets/icon_facebook_hover.svg);
+                        background-image: url(../assets/icon_facebook_hover.svg);
                     }
                 }
                 &#instagram {
-                    background-image: url(/assets/icon_instagram.svg);
+                    background-image: url(../assets/icon_instagram.svg);
                     background-repeat: no-repeat;
                     &:hover {
-                        background-image: url(/assets/icon_instagram-hover.svg);
+                        background-image: url(../assets/icon_instagram-hover.svg);
                     }
                 }
                 &#twitter {
-                    background-image: url(/assets/icon-twitter.svg);
+                    background-image: url(../assets/icon-twitter.svg);
                     background-repeat: no-repeat;
                     &:hover {
-                        background-image: url(/assets/icon-twitter-hover.svg);
+                        background-image: url(../assets/icon-twitter-hover.svg);
                     }
                 }
             }
