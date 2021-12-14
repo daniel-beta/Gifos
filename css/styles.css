@@ -362,6 +362,10 @@ body#home main #searchResult #titleResult {
   width: 338px;
   border-top: 1px #9cafc3 solid;
   padding-top: 30px;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
 }
 
 /* MOBILE */
