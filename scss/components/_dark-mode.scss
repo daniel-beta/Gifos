@@ -5,7 +5,7 @@ body.dark {
   header {
     border-color: black;
     .logo a img {
-      content: url("/assets/logo-dark.svg");
+      content: url("../assets/logo-dark.svg");
     }
     .menu ul {
       li,
@@ -14,9 +14,9 @@ body.dark {
       }
     }
     .crear a img {
-      content: url("/assets/CTA-crear-gifo-modo-noc.svg");
+      content: url("../assets/CTA-crear-gifo-modo-noc.svg");
       &:hover {
-        content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
+        content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
       }
     }
   }
@@ -35,10 +35,10 @@ body.dark {
           color: $light-blue;
         }
         .icon-search {
-          background-image: url("/assets/icon-search-modo-noct.svg");
+          background-image: url("../assets/icon-search-modo-noct.svg");
         }
         .icon-close {
-          background-image: url("/assets/close-modo-noct.svg");
+          background-image: url("../assets/close-modo-noct.svg");
         }
       }
     }
@@ -53,10 +53,10 @@ body.dark {
   &#createGifosPage main {
     #cameraSection {
       #svgCamera {
-        content: url("/assets/camara-modo-noc.svg");
+        content: url("../assets/camara-modo-noc.svg");
       }
       #movie #svgMovie {
-        content: url("/assets/pelicula-modo-noc.svg");
+        content: url("../assets/pelicula-modo-noc.svg");
       }
       #cameraContainer {
         #cameraBox {
@@ -93,16 +93,16 @@ body.dark {
         background-color: $raisin-black;
       }
       #buttonCreateGifo {
-        content: url("/assets/CTA-start-noct.svg");
+        content: url("../assets/CTA-start-noct.svg");
       }
       #buttonRecordGifo {
-        content: url("/assets/CTA-record-noct.svg");
+        content: url("../assets/CTA-record-noct.svg");
       }
       #buttonStopGifo {
-        content: url("/assets/CTA-stop-noct.svg");
+        content: url("../assets/CTA-stop-noct.svg");
       }
       #buttonUpload {
-        content: url("/assets/CTA-upload-noct.svg");
+        content: url("../assets/CTA-upload-noct.svg");
       }
     }
   }
@@ -114,15 +114,15 @@ body.dark {
       }
       #sliderTrending {
         .arrowsSlider#arrowLeft {
-          content: url("/assets/button-slider-left-md-noct.svg");
+          content: url("../assets/button-slider-left-md-noct.svg");
           &:hover {
-            content: url("/assets/button-slider-left-md-noct_hover.svg");
+            content: url("../assets/button-slider-left-md-noct_hover.svg");
           }
         }
         .arrowsSlider#arrowRight {
-          content: url("/assets/button-slider-right-md-noct.svg");
+          content: url("../assets/button-slider-right-md-noct.svg");
           &:hover {
-            content: url("/assets/button-slider-right-md-noct-hover.svg");
+            content: url("../assets/button-slider-right-md-noct-hover.svg");
           }
         }
       }
@@ -131,9 +131,9 @@ body.dark {
       color: white;
     }
     #searchResult .showMore {
-      background-image: url("/assets/CTA-ver+-modo-noc.svg");
+      background-image: url("../assets/CTA-ver+-modo-noc.svg");
       &:hover {
-        background-image: url("/assets/CTA-ver+hover-modo-noc.svg");
+        background-image: url("../assets/CTA-ver+hover-modo-noc.svg");
       }
     }
   }
@@ -150,7 +150,7 @@ body.dark {
     }
     #expandContent {
       #expandCloseIcon {
-        background-image: url("/assets/close-modo-noct.svg");
+        background-image: url("../assets/close-modo-noct.svg");
       }
       #nameGif {
         color: white;
@@ -165,7 +165,7 @@ body.dark {
     header {
       background-color: $black-onyx;
       .menuMobile {
-        content: url("/assets/burger-modo-noct.svg");
+        content: url("../assets/burger-modo-noct.svg");
       }
       #menuList.open {
         background-color: black;

@@ -2,23 +2,23 @@
 
 body#createGifosPage {
   header .crear a img {
-    content: url("/assets/CTA-crear-gifo-active.svg");
+    content: url("../assets/CTA-crear-gifo-active.svg");
     &:hover {
-      content: url("/assets/CTA-crear-gifo-hover.svg");
+      content: url("../assets/CTA-crear-gifo-hover.svg");
     }
   }
   &.dark header .crear a img:hover {
-      content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
+      content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
   }
   main {
     height: 82vh;
     #cameraSection {
       display: flex;
       #svgCamera {
-        content: url("/assets/camara.svg");
+        content: url("../assets/camara.svg");
       }
       #svgProjection {
-        content: url("/assets/element-luz-camara.svg");
+        content: url("../assets/element-luz-camara.svg");
         margin-left: 4px;
         padding-top: 2px;
       }
@@ -26,7 +26,7 @@ body#createGifosPage {
         display: flex;
         align-items: flex-end;
         #svgMovie {
-          content: url("/assets/movie.svg");
+          content: url("../assets/movie.svg");
           margin-left: 20px;
         }
       }
@@ -114,7 +114,7 @@ body#createGifosPage {
             align-items: center;
             gap: 15px;
             #loader {
-              content: url("/assets/loader.svg");
+              content: url("../assets/loader.svg");
               -webkit-animation: spin 2s linear infinite; /* Safari */
               animation: spin 2s linear infinite;
               /* Safari */
@@ -136,7 +136,7 @@ body#createGifosPage {
                 }
               }
               &.ok {
-                content: url("/assets/ok.svg");
+                content: url("../assets/ok.svg");
                 animation: none;
               }
             }
@@ -157,15 +157,15 @@ body#createGifosPage {
               .icon {
                 cursor: pointer;
                 &.download {
-                  content: url("/assets/icon-download.svg");
+                  content: url("../assets/icon-download.svg");
                   &:hover {
-                    content: url("/assets/icon-download-hover.svg");
+                    content: url("../assets/icon-download-hover.svg");
                   }
                 }
                 &.share {
-                  content: url("/assets/icon-link-normal.svg");
+                  content: url("../assets/icon-link-normal.svg");
                   &:hover {
-                    content: url("/assets/icon-link-hover.svg");
+                    content: url("../assets/icon-link-hover.svg");
                   }
                 }
               }
@@ -227,25 +227,25 @@ body#createGifosPage {
         border-radius: 10px;
       }
       #buttonCreateGifo {
-        content: url("/assets/CTA-start.svg");
+        content: url("../assets/CTA-start.svg");
         width: 127px;
         margin: 20px;
         cursor: pointer;
       }
       #buttonRecordGifo {
-        content: url("/assets/CTA-record.svg");
+        content: url("../assets/CTA-record.svg");
         width: 127px;
         margin: 20px;
         cursor: pointer;
       }
       #buttonStopGifo {
-        content: url("/assets/CTA-stop.svg");
+        content: url("../assets/CTA-stop.svg");
         width: 127px;
         margin: 20px;
         cursor: pointer;
       }
       #buttonUpload {
-        content: url("/assets/CTA-upload.svg");
+        content: url("../assets/CTA-upload.svg");
         width: 127px;
         margin: 20px;
         cursor: pointer;

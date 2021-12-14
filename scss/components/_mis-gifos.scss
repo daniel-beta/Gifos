@@ -55,27 +55,27 @@ body#misGifosPage {
               margin: 20px 20px 0 0;
               cursor: pointer;
               &.delete {
-                content: url("/assets/icon-trash-normal.svg");
+                content: url("../assets/icon-trash-normal.svg");
                 &:hover {
-                  content: url("/assets/icon-trash-hover.svg");
+                  content: url("../assets/icon-trash-hover.svg");
                 }
               }
               &.like {
-                content: url("/assets/icon-like-active.svg");
+                content: url("../assets/icon-like-active.svg");
                 &:hover {
-                  content: url("/assets/icon-fav-hover.svg");
+                  content: url("../assets/icon-fav-hover.svg");
                 }
               }
               &.download {
-                content: url("/assets/icon-download.svg");
+                content: url("../assets/icon-download.svg");
                 &:hover {
-                  content: url("/assets/icon-download-hover.svg");
+                  content: url("../assets/icon-download-hover.svg");
                 }
               }
               &.expand {
-                content: url("/assets/icon-max-normal.svg");
+                content: url("../assets/icon-max-normal.svg");
                 &:hover {
-                  content: url("/assets/icon-max-hover.svg");
+                  content: url("../assets/icon-max-hover.svg");
                 }
               }
             }
