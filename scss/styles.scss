@@ -5,6 +5,7 @@
 @import "components/favoritos.scss";
 @import "components/mis-gifos.scss";
 @import "components/crear-gifos.scss";
+@import "components/dark-mode.scss";
 @import "components/datos.scss";
 
 body {
@@ -27,7 +28,7 @@ body {
       flex-direction: column;
       width: 100%;
       max-width: 500px;
-      top: calc(50% - 350px);
+      top: calc(50% - 300px);
       left: calc(50% - 250px);
       justify-content: center;
       #expandCloseIcon {
@@ -89,7 +90,7 @@ body {
     flex-direction: column;
     align-items: center;
     h1.titulo {
-      color: $morado;
+      color: $purple;
       font-size: 35px;
       font-family: Montserrat, "Open Sans";
       text-align: center;
@@ -97,22 +98,22 @@ body {
       width: 600px;
       justify-content: center;
       span {
-        color: $celeste;
+        color: $aquamarine;
       }
     }
     h2.subtitulo {
       font-size: 25px;
-      color: $morado;
+      color: $purple;
       font-weight: bold;
     }
     h3.subtitulo-secundario {
       font-size: 22px;
-      color: $celeste;
+      color: $aquamarine;
       text-align: center;
     }
     #trendingGifos {
       width: 100%;
-      background: $black-haze;
+      background: $white-haze;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -197,7 +198,7 @@ body {
       flex-direction: column;
       align-items: center;
       font-size: 22px;
-      color: $celeste;
+      color: $aquamarine;
       font-weight: bold;
       margin: 25px 0;
       img {
@@ -414,6 +415,40 @@ body {
               }
             }
           }
+        }
+      }
+      h3.subtitulo-secundario {
+        width: 95%;
+        br {
+          display: none;
+        }
+      }
+      #icono-titulo {
+        margin-top: 20px;
+      }
+      #emptyContainer {
+        margin: 40px 0;
+      }
+      #gifoTrendingSlider .gifoTrending:hover .gifoInfo,
+      #gifosResult .gifoTrending:hover .gifoInfo,
+      #likesContainer .gifoCardsLike:hover .gifoInfo,
+      #myGifosContainer .gifoCardsLike:hover .gifoInfo  {
+        display: none !important;
+      }
+    }
+    #expandContainer {
+      #expandBackground {
+        top: 0;
+        z-index: 4;
+      }
+      #expandContent {
+        padding: 20px;
+        left: 0;
+        width: 90%;
+        top: 25%;
+        z-index: 5;
+        #expandCloseIcon {
+          right: 20px;
         }
       }
     }

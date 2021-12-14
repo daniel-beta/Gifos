@@ -4,7 +4,7 @@ body#likesPage {
   header {
     .menu {
       #favoritos {
-        color: $azul-claro;
+        color: $light-blue;
       }
     }
   }
@@ -108,8 +108,20 @@ body#likesPage {
   }
 }
 
+/* MOBILE */
 @media (max-width: 640px) {
-  body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
-    display: none;
+  body#likesPage {
+    main #likesContainer {
+      gap: 10px;
+      .gifoCardsLike {
+        height: 140px;
+        width: 160px;
+        img {
+          height: 140px;
+          width: 160px;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }

@@ -3,7 +3,7 @@
 header {
   display: flex;
   justify-content: center;
-  border-top: $morado 6px solid;
+  border-top: $purple 6px solid;
   padding: 20px;
   .logo {
     width: 40%;
@@ -19,18 +19,33 @@ header {
       list-style: none;
       padding: 0;
       li {
-        padding: 0 20px;
-        color: $morado;
+        margin: 0 20px;
+        color: $purple;
+        border-bottom: solid 3px transparent;
         a {
           text-decoration: none;
           &:visited {
-            color: $morado;
+            color: $purple;
           }
+        }
+        &:hover {
+          border-bottom: solid 3px $aquamarine;
+        }
+      }
+    }
+    #nightMode {
+      cursor: pointer;
+      &.active {
+        font-size: 0;
+        &::after {
+          font-size: 13px;
+          content: "MODO DIURNO";
         }
       }
     }
   }
   .crear {
+    width: 54px;
     display: flex;
     align-items: center;
     a img:hover {
@@ -85,7 +100,7 @@ header {
     #menuList {
       display: none;
       &.open {
-        background-color: $morado;
+        background-color: $purple;
         opacity: 0.9;
         display: flex;
         position: fixed;
@@ -120,6 +135,16 @@ header {
             color: white;
             text-decoration: none;
             font-weight: 600;
+          }
+          #nightModeMobile {
+            cursor: pointer;
+            &.active {
+              font-size: 0;
+              &::before {
+                font-size: 1rem;
+                content: "Modo Diurno";
+              }
+            }
           }
         }
       }

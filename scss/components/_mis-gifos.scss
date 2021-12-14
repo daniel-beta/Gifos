@@ -4,7 +4,7 @@ body#misGifosPage {
   header {
     .menu {
       #mis-gifos {
-        color: $azul-claro;
+        color: $light-blue;
       }
     }
   }
@@ -116,6 +116,24 @@ body#misGifosPage {
     }
     #trendingGifos #sliderTrending #gifoTrendingSlider .gifoTrending .gifoInfo .actions .icon.delete {
       display: none;
+    }
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  body#misGifosPage {
+    main #myGifosContainer {
+      gap: 10px;
+      .gifoCardsLike {
+        height: 140px;
+        width: 160px;
+        img {
+          height: 140px;
+          width: 160px;
+          object-fit: cover;
+        }
+      }
     }
   }
 }
