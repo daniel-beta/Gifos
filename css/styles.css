@@ -42,8 +42,9 @@ header .menu ul {
   padding: 0;
 }
 header .menu ul li {
-  padding: 0 20px;
+  margin: 0 20px;
   color: #572ee5;
+  border-bottom: solid 3px transparent;
 }
 header .menu ul li a {
   text-decoration: none;
@@ -51,7 +52,21 @@ header .menu ul li a {
 header .menu ul li a:visited {
   color: #572ee5;
 }
+header .menu ul li:hover {
+  border-bottom: solid 3px #50e3c2;
+}
+header .menu #nightMode {
+  cursor: pointer;
+}
+header .menu #nightMode.active {
+  font-size: 0;
+}
+header .menu #nightMode.active::after {
+  font-size: 13px;
+  content: "MODO DIURNO";
+}
 header .crear {
+  width: 54px;
   display: flex;
   align-items: center;
 }
@@ -141,6 +156,16 @@ header .crear {
     color: white;
     text-decoration: none;
     font-weight: 600;
+  }
+  header #menuList.open ul #nightModeMobile {
+    cursor: pointer;
+  }
+  header #menuList.open ul #nightModeMobile.active {
+    font-size: 0;
+  }
+  header #menuList.open ul #nightModeMobile.active::before {
+    font-size: 1rem;
+    content: "Modo Diurno";
   }
   header.open {
     position: fixed;
@@ -359,6 +384,18 @@ body#home main #searchResult #titleResult {
     text-align: center;
     line-height: 25px;
   }
+  body#home main #searchResult #gifosResult {
+    gap: 10px;
+  }
+  body#home main #searchResult #gifosResult .gifoTrending {
+    height: 140px;
+    width: 160px;
+  }
+  body#home main #searchResult #gifosResult .gifoTrending img {
+    height: 140px;
+    width: 160px;
+    object-fit: cover;
+  }
 }
 /* Colores */
 body#likesPage header .menu #favoritos {
@@ -462,9 +499,19 @@ body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
   background-color: rgba(87, 46, 229, 0.5);
 }
 
+/* MOBILE */
 @media (max-width: 640px) {
-  body#likesPage main #likesContainer .gifoCardsLike:hover .gifoInfo {
-    display: none;
+  body#likesPage main #likesContainer {
+    gap: 10px;
+  }
+  body#likesPage main #likesContainer .gifoCardsLike {
+    height: 140px;
+    width: 160px;
+  }
+  body#likesPage main #likesContainer .gifoCardsLike img {
+    height: 140px;
+    width: 160px;
+    object-fit: cover;
   }
 }
 /* Colores */
@@ -580,12 +627,30 @@ body#misGifosPage main #trendingGifos #sliderTrending #gifoTrendingSlider .gifoT
   display: none;
 }
 
+/* MOBILE */
+@media (max-width: 640px) {
+  body#misGifosPage main #myGifosContainer {
+    gap: 10px;
+  }
+  body#misGifosPage main #myGifosContainer .gifoCardsLike {
+    height: 140px;
+    width: 160px;
+  }
+  body#misGifosPage main #myGifosContainer .gifoCardsLike img {
+    height: 140px;
+    width: 160px;
+    object-fit: cover;
+  }
+}
 /* Colores */
 body#createGifosPage header .crear a img {
   content: url("/assets/CTA-crear-gifo-active.svg");
 }
 body#createGifosPage header .crear a img:hover {
   content: url("/assets/CTA-crear-gifo-hover.svg");
+}
+body#createGifosPage.dark header .crear a img:hover {
+  content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
 }
 body#createGifosPage main {
   height: 82vh;
@@ -831,6 +896,153 @@ body#createGifosPage main #cameraButtonSection #buttonUpload {
 }
 
 /* Colores */
+body.dark {
+  background-color: #37383C;
+}
+body.dark header {
+  border-color: black;
+}
+body.dark header .logo a img {
+  content: url("/assets/logo-dark.svg");
+}
+body.dark header .menu ul li,
+body.dark header .menu ul a {
+  color: white;
+}
+body.dark header .crear a img {
+  content: url("/assets/CTA-crear-gifo-modo-noc.svg");
+}
+body.dark header .crear a img:hover {
+  content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
+}
+body.dark#home main .titulo {
+  color: white;
+}
+body.dark#home main #search #search-bar {
+  border: 2px solid white;
+}
+body.dark#home main #search #search-bar input {
+  background-color: #37383C;
+  color: white;
+}
+body.dark#home main #search #search-bar #suggestions .suggestion {
+  color: #9cafc3;
+}
+body.dark#home main #search #search-bar .icon-search {
+  background-image: url("/assets/icon-search-modo-noct.svg");
+}
+body.dark#home main #search #search-bar .icon-close {
+  background-image: url("/assets/close-modo-noct.svg");
+}
+body.dark#home main #trending h3,
+body.dark#home main #trending #trendingSearches span {
+  color: white;
+}
+body.dark#home main #searchResult #titleResult {
+  color: white;
+}
+body.dark#createGifosPage main #cameraSection #svgCamera {
+  content: url("/assets/camara-modo-noc.svg");
+}
+body.dark#createGifosPage main #cameraSection #movie #svgMovie {
+  content: url("/assets/pelicula-modo-noc.svg");
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #cameraBox {
+  border-color: white;
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners h1.titulo {
+  color: white;
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #cameraBox #corners p {
+  color: #9cafc3;
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #steps .steps {
+  color: #f5f6f9;
+  border-color: #f5f6f9;
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #steps .steps.active {
+  color: #222326;
+  background-color: #f5f6f9;
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #steps #timerGifo {
+  color: #9cafc3;
+}
+body.dark#createGifosPage main #cameraSection #cameraContainer #steps #repeatGifo {
+  color: #9cafc3;
+}
+body.dark#createGifosPage main #cameraButtonSection #divider {
+  background-color: #222326;
+}
+body.dark#createGifosPage main #cameraButtonSection #buttonCreateGifo {
+  content: url("/assets/CTA-start-noct.svg");
+}
+body.dark#createGifosPage main #cameraButtonSection #buttonRecordGifo {
+  content: url("/assets/CTA-record-noct.svg");
+}
+body.dark#createGifosPage main #cameraButtonSection #buttonStopGifo {
+  content: url("/assets/CTA-stop-noct.svg");
+}
+body.dark#createGifosPage main #cameraButtonSection #buttonUpload {
+  content: url("/assets/CTA-upload-noct.svg");
+}
+body.dark main #trendingGifos {
+  background-color: #222326;
+}
+body.dark main #trendingGifos p {
+  color: white;
+}
+body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft {
+  content: url("/assets/button-slider-left-md-noct.svg");
+}
+body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowLeft:hover {
+  content: url("/assets/button-slider-left-md-noct_hover.svg");
+}
+body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowRight {
+  content: url("/assets/button-slider-right-md-noct.svg");
+}
+body.dark main #trendingGifos #sliderTrending .arrowsSlider#arrowRight:hover {
+  content: url("/assets/button-slider-right-md-noct-hover.svg");
+}
+body.dark main h2.subtitulo {
+  color: white;
+}
+body.dark main #searchResult .showMore {
+  background-image: url("/assets/CTA-ver+-modo-noc.svg");
+}
+body.dark main #searchResult .showMore:hover {
+  background-image: url("/assets/CTA-ver+hover-modo-noc.svg");
+}
+body.dark footer {
+  border-color: black;
+}
+body.dark footer #social p,
+body.dark footer #copyright p {
+  color: #f5f6f9;
+}
+body.dark #expandContainer #expandBackground {
+  background-color: #37383C;
+}
+body.dark #expandContainer #expandContent #expandCloseIcon {
+  background-image: url("/assets/close-modo-noct.svg");
+}
+body.dark #expandContainer #expandContent #nameGif {
+  color: white;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  body.dark header {
+    background-color: #37383C;
+  }
+  body.dark header .menuMobile {
+    content: url("/assets/burger-modo-noct.svg");
+  }
+  body.dark header #menuList.open {
+    background-color: black;
+    opacity: 1;
+  }
+}
+/* Colores */
 body {
   margin: 0;
   font-family: Montserrat;
@@ -853,7 +1065,7 @@ body #expandContainer #expandContent {
   flex-direction: column;
   width: 100%;
   max-width: 500px;
-  top: calc(50% - 350px);
+  top: calc(50% - 300px);
   left: calc(50% - 250px);
   justify-content: center;
 }
@@ -1235,6 +1447,38 @@ body main #trendingGifos #sliderTrending #arrowLeft {
   body main #trendingGifos #sliderTrending #gifoTrendingSlider .gifoTrending img {
     width: 280px;
     height: 250px;
+  }
+  body main h3.subtitulo-secundario {
+    width: 95%;
+  }
+  body main h3.subtitulo-secundario br {
+    display: none;
+  }
+  body main #icono-titulo {
+    margin-top: 20px;
+  }
+  body main #emptyContainer {
+    margin: 40px 0;
+  }
+  body main #gifoTrendingSlider .gifoTrending:hover .gifoInfo,
+body main #gifosResult .gifoTrending:hover .gifoInfo,
+body main #likesContainer .gifoCardsLike:hover .gifoInfo,
+body main #myGifosContainer .gifoCardsLike:hover .gifoInfo {
+    display: none !important;
+  }
+  body #expandContainer #expandBackground {
+    top: 0;
+    z-index: 4;
+  }
+  body #expandContainer #expandContent {
+    padding: 20px;
+    left: 0;
+    width: 90%;
+    top: 25%;
+    z-index: 5;
+  }
+  body #expandContainer #expandContent #expandCloseIcon {
+    right: 20px;
   }
 }
 

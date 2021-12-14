@@ -7,6 +7,9 @@ body#createGifosPage {
       content: url("/assets/CTA-crear-gifo-hover.svg");
     }
   }
+  &.dark header .crear a img:hover {
+      content: url("/assets/CTA-crear-gifo-hover-modo-noc.svg");
+  }
   main {
     height: 82vh;
     #cameraSection {
@@ -35,7 +38,7 @@ body#createGifosPage {
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 1px solid $morado;
+          border: 1px solid $purple;
           width: 688px;
           height: 390px;
           #corners {
@@ -51,26 +54,26 @@ body#createGifosPage {
               height: 27px;
               position: absolute;
               &#cornerTopRight {
-                border-top: 1px solid $celeste;
-                border-right: 1px solid $celeste;
+                border-top: 1px solid $aquamarine;
+                border-right: 1px solid $aquamarine;
                 top: 0;
                 right: 0;
               }
               &#cornerTopLeft {
-                border-top: 1px solid $celeste;
-                border-left: 1px solid $celeste;
+                border-top: 1px solid $aquamarine;
+                border-left: 1px solid $aquamarine;
                 top: 0;
                 left: 0;
               }
               &#cornerBottomRight {
-                border-bottom: 1px solid $celeste;
-                border-right: 1px solid $celeste;
+                border-bottom: 1px solid $aquamarine;
+                border-right: 1px solid $aquamarine;
                 bottom: 0;
                 right: 0;
               }
               &#cornerBottomLeft {
-                border-bottom: 1px solid $celeste;
-                border-left: 1px solid $celeste;
+                border-bottom: 1px solid $aquamarine;
+                border-left: 1px solid $aquamarine;
                 bottom: 0;
                 left: 0;
               }
@@ -98,7 +101,7 @@ body#createGifosPage {
             position: absolute;
             width: 400px;
             height: 300px;
-            background-color: $morado;
+            background-color: $purple;
             opacity: 0.6;
           }
           #upload {
@@ -180,15 +183,15 @@ body#createGifosPage {
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid $morado;
-            color: $morado;
+            border: 1px solid $purple;
+            color: $purple;
             font-size: 18px;
             font-weight: 600;
             width: 32px;
             height: 32px;
             border-radius: 50%;
             &.active {
-              background-color: $morado;
+              background-color: $purple;
               color: white;
             }
           }
@@ -196,7 +199,7 @@ body#createGifosPage {
           #repeatGifo {
             position: absolute;
             right: 0;
-            color: $morado;
+            color: $purple;
             font-size: 15px;
             letter-spacing: 0;
             text-align: center;
@@ -204,7 +207,7 @@ body#createGifosPage {
             font-weight: 600;
           }
           #repeatGifo {
-            border-bottom: 2px solid $celeste;
+            border-bottom: 2px solid $aquamarine;
             cursor: pointer;
           }
         }
@@ -220,7 +223,7 @@ body#createGifosPage {
       #divider {
         width: 100%;
         height: 7px;
-        background-color: $morado;
+        background-color: $purple;
         border-radius: 10px;
       }
       #buttonCreateGifo {

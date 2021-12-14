@@ -421,6 +421,8 @@ const iconLikeActive = gifoId => {
   })
 }
 
+/* MENU MOBILE */
+
 const menuMobile = () => {
   const iconMenuMobile = document.querySelector('.menuMobile')
   const menuList = document.querySelector("#menuList")
@@ -678,14 +680,36 @@ const deleteGifo = gifo => {
   localStorage.setItem('misGifos', JSON.stringify(myGifo));
 }
 
-/* MOBILE */
+/* DARK MODE */
 
-const isMobile = gifoId => {
-  const gifo = document.querySelector(`#id${gifoId}`)
-  if (screen.width < 1024) {
-    gifo.addEventListener('click', () => {
-      console.log('Click en el gifo', gifoId)
-    })
+const nightMode = document.querySelector('#nightMode')
+const nightModeMobile = document.querySelector('#nightModeMobile')
+
+const darkMode = () => {
+  nightMode.addEventListener('click', () => {
+    switchDarkMode()
+  })
+  nightModeMobile.addEventListener('click', () => {
+    switchDarkMode()
+  })
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    nightMode.classList.add('active');
+    nightModeMobile.classList.add('active');
+  } else {
+    nightMode.classList.remove('active');
+    nightModeMobile.classList.remove('active');
+  }
+}
+
+const switchDarkMode = () => {
+  document.body.classList.toggle('dark');
+  nightMode.classList.toggle('active');
+  nightModeMobile.classList.toggle('active');
+  if (document.body.classList.contains('dark')) {
+    localStorage.setItem('darkMode', 'true');
+  } else {
+    localStorage.setItem('darkMode', 'false');
   }
 }
 
@@ -700,11 +724,11 @@ if (document.querySelector('#home')) {
 }
 
 if (document.querySelector('#likesPage')) {
-  domLikes();
+  domLikes()
 }
 
 if (document.querySelector('#misGifosPage')) {
-  getId();
+  getId()
 }
 
 if (!document.querySelector('#createGifosPage')) {
@@ -714,3 +738,4 @@ if (!document.querySelector('#createGifosPage')) {
 }
 
 menuMobile()
+darkMode()
